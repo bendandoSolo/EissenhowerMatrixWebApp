@@ -1,9 +1,10 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
+
 import APITests from '../components/APITests';
+import TodoList from '../components/TodoList';
 
 const Home: NextPage = () => {
   return (
@@ -14,10 +15,10 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-		<h1>The Eisehower matrix </h1>
+		<h1 className='test'>The Eisehower matrix </h1>
 		<p>Use our simple Eisenhower Matrix app to help you plan you projects and be more organised</p>
 		<APITests />
-
+		<TodoList />
     </div>
   )
 }
