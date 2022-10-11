@@ -8,58 +8,46 @@ import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
 import InboxIcon from '@mui/icons-material/Inbox';
 import DraftsIcon from '@mui/icons-material/Drafts';
+import TaskIcon from '@mui/icons-material/Task';
 import Button from '@mui/material/Button';
 
 import useToggle from '../hooks/useToggle';
 import AddTodoForm from './AddTodoForm';
+import useTodos from '../hooks/useTodos';
 
+import TodoType from '../types/Todo';
 
 const TodoList= () => {
 
 	const [open, toggle] = useToggle();
+
+	const { status, data, error, isFetching } = useTodos();
 
   return (
 	<>
 	<h2>Todo List</h2>
 	{open && <AddTodoForm/>}
 	<Button variant="contained" onClick={toggle}>Add Todo</Button>
-    <Box sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-      <nav aria-label="main mailbox folders">
-        <List>
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                <InboxIcon />
-              </ListItemIcon>
-              <ListItemText primary="Inbox" />
-            </ListItemButton>
-          </ListItem>
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                <DraftsIcon />
-              </ListItemIcon>
-              <ListItemText primary="Drafts" />
-            </ListItemButton>
-          </ListItem>
-        </List>
-      </nav>
-      <Divider />
-      <nav aria-label="secondary mailbox folders">
-        <List>
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemText primary="Trash" />
-            </ListItemButton>
-          </ListItem>
-          <ListItem disablePadding>
-            <ListItemButton component="a" href="#simple-list">
-              <ListItemText primary="Spam" />
-            </ListItemButton>
-          </ListItem>
-        </List>
-      </nav>
-    </Box>
+	{status === "loading" ? (
+          "Loading..."
+				) : status === "error" ? (
+					<span>Error: {error.message}</span>
+				) : (
+				<Box sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+					<nav aria-label="main mailbox folders">
+					<List>
+						{data.map((item: TodoType) => (	
+						<ListItem key={item.id} disablePadding>
+							<ListItemButton>
+								<TaskIcon/>
+								<ListItemText primary={item.name} />
+							</ListItemButton>
+						</ListItem>
+						))}
+					</List>
+					</nav>
+				</Box>
+			)}
 	</>
   );
 }
