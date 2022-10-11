@@ -41,6 +41,7 @@ const TodoList= () => {
 							<ListItemButton>
 								<TaskIcon/>
 								<ListItemText primary={item.name} />
+								<ListItemText primary={item.description} />
 							</ListItemButton>
 						</ListItem>
 						))}
