@@ -1,28 +1,17 @@
 //import {useQuery} from '@tanstack/react-query';
-import { useMutation } from '@tanstack/react-query';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 import axios from 'axios';
 
 export default function useCreateTodo() {
-	
-	// return useMutation(["createTodo"], async (todoData: any) => {
-	// 	console.log(`todoData ${todoData}`);	
-	// 	if (todoData != null) {
-	// 		let response  = axios.post(
-	// 			'https://localhost:7108/todoitems',
-	// 			todoData
-	// 		);
-	//   		return response;
-	// 	}
-	// });
+	const queryClient = useQueryClient();
 
-	 return useMutation(newTodo => {
-		let response  = axios.post(
+	 return useMutation( async newTodo => {
+		let response  = await axios.post(
 			'https://localhost:7108/todoitems',
-			newTodo
+			 newTodo
 		 );
-		 //useQueryClient().invalidateQueries(['useTodos']);
+		 queryClient.invalidateQueries(['todos'], )
 		 return response;
-		 console.log('response', response);
 	 })
  }
 

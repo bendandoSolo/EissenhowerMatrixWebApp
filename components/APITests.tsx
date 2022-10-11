@@ -2,7 +2,6 @@ import React from 'react';
 import axios from 'axios';
 import useTodos from '../hooks/useTodos';
 
-
 const APITests = () => {
 
 	const { status, data, error, isFetching } = useTodos();

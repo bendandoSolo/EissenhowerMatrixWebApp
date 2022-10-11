@@ -4,7 +4,7 @@ import { useForm} from 'react-hook-form';
 import Button from '@mui/material/Button';
 
 import useCreateTodo from '../hooks/useCreateTodo';
-import { useQueryClient } from '@tanstack/react-query';
+import { QueryClient, useQueryClient } from '@tanstack/react-query';
 
 const AddTodoForm = () => {
 
@@ -15,12 +15,16 @@ const AddTodoForm = () => {
 	 } = useForm();
 
 	 const {isLoading, isError, isSuccess, mutate} = useCreateTodo();
-	 const queryClient = useQueryClient();
-
+	 const queryClient = new QueryClient();
+	 
 	 const onSubmit = async (data: any) => {
-		mutate(data);
+		let response = mutate(data);
+		if(isSuccess){
+			queryClient.invalidateQueries();
+			console.log(`success ${response}`);
+		}
 		//queryClient.invalidateQueries(["useTodos"]);
-		queryClient.invalidateQueries();//invalidate all queries
+		//queryClient.invalidateQueries();//invalidate all queries
 	 }
 
 	return (
