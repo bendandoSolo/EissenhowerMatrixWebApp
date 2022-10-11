@@ -6,22 +6,29 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
-import InboxIcon from '@mui/icons-material/Inbox';
-import DraftsIcon from '@mui/icons-material/Drafts';
 import TaskIcon from '@mui/icons-material/Task';
+import DeleteIcon from '@mui/icons-material/Delete';
 import Button from '@mui/material/Button';
 
 import useToggle from '../hooks/useToggle';
 import AddTodoForm from './AddTodoForm';
 import useTodos from '../hooks/useTodos';
+import useDeleteTodo from '../hooks/useDeleteTodo';
 
 import TodoType from '../types/Todo';
+
 
 const TodoList= () => {
 
 	const [open, toggle] = useToggle();
 
 	const { status, data, error, isFetching } = useTodos();
+
+	const {isLoading, isError, isSuccess, mutate} = useDeleteTodo();
+
+	const deleteTodo = (id: number) => {
+		mutate(id);
+	}
 
   return (
 	<>
@@ -42,6 +49,7 @@ const TodoList= () => {
 								<TaskIcon/>
 								<ListItemText primary={item.name} />
 								<ListItemText primary={item.description} />
+								<Button onClick={() => {deleteTodo(item.id)} }><DeleteIcon/></Button>
 							</ListItemButton>
 						</ListItem>
 						))}

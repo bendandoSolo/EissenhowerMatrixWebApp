@@ -4,8 +4,6 @@ import { useForm} from 'react-hook-form';
 import Button from '@mui/material/Button';
 
 import useCreateTodo from '../hooks/useCreateTodo';
-import { QueryClient, useQueryClient } from '@tanstack/react-query';
-
 interface IFormInput {
 	name: string;
 	description: string;
