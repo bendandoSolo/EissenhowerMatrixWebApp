@@ -1,7 +1,16 @@
+@import "alignment";
+
+
 .body{
 	background-color: red !important;
 }
 
 .test{
 	background-color: red !important;
+	width:100%;
+	padding: 24px;
+}
+
+li.MuiListItem-root{
+	color: black;
 }

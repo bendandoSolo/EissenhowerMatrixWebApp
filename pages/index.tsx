@@ -15,10 +15,14 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-		<h1 className='test'>The Eisehower matrix </h1>
+		<h1 className='test'>The Eisehower matrix</h1>
 		<p>Use our simple Eisenhower Matrix app to help you plan you projects and be more organised</p>
-		<APITests />
+		<h2>Get Started with our free Eisenhower Matrix App</h2>
+
+		
 		<TodoList />
+		<hr/>
+		<APITests />
     </div>
   )
 }

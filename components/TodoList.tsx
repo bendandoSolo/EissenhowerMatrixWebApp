@@ -8,9 +8,19 @@ import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
 import InboxIcon from '@mui/icons-material/Inbox';
 import DraftsIcon from '@mui/icons-material/Drafts';
+import Button from '@mui/material/Button';
 
-export default function TodoList() {
+import useToggle from '../hooks/useToggle';
+
+const TodoList= () => {
+
+	const [open, toggle] = useToggle();
+
   return (
+	<>
+	<h2>Todo List</h2>
+	{open && <p>Here we will call the form</p>}
+	<Button variant="contained" onClick={toggle}>Add Todo</Button>
     <Box sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
       <nav aria-label="main mailbox folders">
         <List>
@@ -48,5 +58,8 @@ export default function TodoList() {
         </List>
       </nav>
     </Box>
+	</>
   );
 }
+
+export default TodoList;
