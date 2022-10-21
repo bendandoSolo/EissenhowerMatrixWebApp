@@ -7,7 +7,11 @@ const useToggle = () => {
 		setOpen(!open);
 	};
 
-	return [ open, toggle ] as const; 
+	const close = () => {
+		setOpen(false);	
+	};
+
+	return [ open, close, toggle ] as const; 
 };
 
 export default useToggle;

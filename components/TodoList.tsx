@@ -22,20 +22,16 @@ import TodoType from '../types/Todo';
 import { Checkbox } from '@mui/material';
 
 const TodoList= () => {
-
-	const [open, toggle] = useToggle();
-	const [openEdit, toggleEdit] = useToggle();
+	const [selectedTodo, setSelectedTodo] = React.useState<TodoType>();
+	const [open, close, toggle] = useToggle();
+	const [openEdit, closeEdit, toggleEdit] = useToggle();
 	const { status, data, error, isFetching } = useTodos();
 	const {isLoading, isError, isSuccess, mutate} = useDeleteTodo();
 	const {mutate: update } = useUpdateTodo();
+	
+	const deleteTodo = (id: number) => {mutate(id);}
 
-	const [selectedTodo, setSelectedTodo] = React.useState<TodoType>();
-
-	const deleteTodo = (id: number) => {
-		mutate(id);
-	}
-
-	const markComplete = (todo: TodoType) => {
+	const toggleIsComplete = (todo: TodoType) => {
 		todo.completionDate = !todo.completionDate ? new Date() : undefined;
 		update(todo);  
 	}
@@ -43,6 +39,12 @@ const TodoList= () => {
 	const editTodo = (todo: TodoType) => {
 		setSelectedTodo(todo);
 		toggleEdit();
+		close();
+	}
+
+	const openCreateTodo = () => {
+		toggle();
+		closeEdit();		
 	}
 
 return (
@@ -50,7 +52,7 @@ return (
 	<h2>Todo List</h2>
 	{open && <AddTodoForm/>}
 	{openEdit && <EditTodoForm todo={selectedTodo!} toggleEdit={toggleEdit}/>}
-	<Button variant="contained" onClick={toggle}>Add Todo</Button>
+	<Button color="primary" variant="contained" onClick={openCreateTodo}>Add Todo</Button>
 	{status === "loading" ? ("Loading...") :
 	 			status === "error" ? (<span>Error: {error.message}</span>)
 				: 
@@ -64,10 +66,9 @@ return (
 								<TaskIcon/>
 								<ListItemText primary={item.name} />
 								<ListItemText primary={item.description} />
-								<Button onClick={ () => {deleteTodo(item.id)} } ><DeleteIcon/></Button>
+								<Button color="primary" onClick={ () => {deleteTodo(item.id)} } ><DeleteIcon/></Button>
 								<Button onClick={ () => {editTodo(item)} } ><EditIcon/></Button>
-								<Checkbox value={item} onClick={ () => {markComplete(item)} } />
-								{/* <Checkbox value={item.id} onClick={ (event: React.MouseEvent<any>) => {markComplete( (event) )} } /> */}
+								<Checkbox value={item} onClick={ () => {toggleIsComplete(item)} } />
 							</ListItemButton>
 						</ListItem>
 						))}
