@@ -26,23 +26,17 @@ const TodoList= () => {
 	const [open, toggle] = useToggle();
 	const { status, data, error, isFetching } = useTodos();
 	const {isLoading, isError, isSuccess, mutate} = useDeleteTodo();
-	const [ update] = useUpdateTodo();
+	const {mutate: update } = useUpdateTodo();
 
 	const deleteTodo = (id: number) => {
 		mutate(id);
 	}
 
-	const markComplete = (event: React.MouseEvent<any>) => {
-		  // @ts-ignore
-		  console.log(event.target.checked!); // Working
-		   // @ts-ignore
-		  let todoId = event.target.value;
-		  let todo = data.find((todo: TodoType) => todo.id === parseInt(todoId));
-		  todo.completionDate = Date.now();
-		  update(todo);
+	const markComplete = (id: number) => {
+		update(id);  
 	}
 
-  return (
+return (
 	<>
 	<h2>Todo List</h2>
 	{open && <AddTodoForm/>}
@@ -61,7 +55,8 @@ const TodoList= () => {
 								<ListItemText primary={item.name} />
 								<ListItemText primary={item.description} />
 								<Button onClick={ () => {deleteTodo(item.id)} } ><DeleteIcon/></Button>
-								<Checkbox value={item.id} onClick={ (event: React.MouseEvent<any>) => {markComplete( (event) )} } />
+								<Checkbox value={item.id} onClick={ () => {markComplete(item.id)} } />
+								{/* <Checkbox value={item.id} onClick={ (event: React.MouseEvent<any>) => {markComplete( (event) )} } /> */}
 							</ListItemButton>
 						</ListItem>
 						))}
