@@ -11,27 +11,19 @@ export default function useCreateTodo() {
 	// description?: string;
 	// completionDate?: Date;
 
-	return useMutation( async (id:number) => {
-		let response  = await axios.delete(`https://localhost:7108/todoitems/${id}`)
-		queryClient.invalidateQueries(['todos'], );
-		return response;
-	})
-
 	// return useMutation( async (id:number) => {
-	// 	console.log('got here');
 	// 	let response  = await axios.delete(`https://localhost:7108/todoitems/${id}`)
 	// 	queryClient.invalidateQueries(['todos'], );
 	// 	return response;
 	// })
 
-
-	// useMutation( async (todo:TodoType) => {
-	// 	let response  = await axios.put('https://localhost:7108/todoitems/${todo.id}',
-	// 		 todo
-	// 	 );
-	// 	 queryClient.invalidateQueries(['todos'], )
-	// 	 return response;
-	//  })
+	return useMutation( async (todo:TodoType) => {
+		let response  = await axios.put(`https://localhost:7108/todoitems/${todo.id}`,
+			 todo
+		 );
+		 queryClient.invalidateQueries(['todos'], )
+		 return response;
+	 })
 
 
 	//  useMutation( async ({id, name, description, completionDate}: TodoType) => {

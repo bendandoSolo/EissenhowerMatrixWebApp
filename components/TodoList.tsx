@@ -32,8 +32,9 @@ const TodoList= () => {
 		mutate(id);
 	}
 
-	const markComplete = (id: number) => {
-		update(id);  
+	const markComplete = (todo: TodoType) => {
+		todo.completionDate = !todo.completionDate ? new Date() : undefined;
+		update(todo);  
 	}
 
 return (
@@ -55,7 +56,7 @@ return (
 								<ListItemText primary={item.name} />
 								<ListItemText primary={item.description} />
 								<Button onClick={ () => {deleteTodo(item.id)} } ><DeleteIcon/></Button>
-								<Checkbox value={item.id} onClick={ () => {markComplete(item.id)} } />
+								<Checkbox value={item} onClick={ () => {markComplete(item)} } />
 								{/* <Checkbox value={item.id} onClick={ (event: React.MouseEvent<any>) => {markComplete( (event) )} } /> */}
 							</ListItemButton>
 						</ListItem>
