@@ -49,7 +49,7 @@ return (
 	<>
 	<h2>Todo List</h2>
 	{open && <AddTodoForm/>}
-	{openEdit && <EditTodoForm todo={selectedTodo!}/>}
+	{openEdit && <EditTodoForm todo={selectedTodo!} toggleEdit={toggleEdit}/>}
 	<Button variant="contained" onClick={toggle}>Add Todo</Button>
 	{status === "loading" ? ("Loading...") :
 	 			status === "error" ? (<span>Error: {error.message}</span>)
