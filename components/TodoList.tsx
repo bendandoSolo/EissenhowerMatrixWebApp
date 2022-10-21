@@ -48,16 +48,16 @@ const TodoList= () => {
 	}
 
 return (
-	<>
-	<h2>Todo List</h2>
+	<div className='p-24'>
+	<div className='mb24'><h2 >Todo List</h2></div>
 	{open && <AddTodoForm/>}
 	{openEdit && <EditTodoForm todo={selectedTodo!} toggleEdit={toggleEdit}/>}
-	<Button color="primary" variant="contained" onClick={openCreateTodo}>Add Todo</Button>
+	<Button className="d-block" color="primary" variant="contained" onClick={openCreateTodo}>Add Todo</Button>
 	{status === "loading" ? ("Loading...") :
 	 			status === "error" ? (<span>Error: {error.message}</span>)
 				: 
 				(
-				<Box sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+				<Box sx={{ width: '100%', bgcolor: 'background.paper' }}>
 					<nav aria-label="main mailbox folders">
 					<List>
 						{data.map((item: TodoType) => (	
@@ -76,7 +76,7 @@ return (
 					</nav>
 				</Box>
 			)}
-	</>
+	</div>
   );
 }
 

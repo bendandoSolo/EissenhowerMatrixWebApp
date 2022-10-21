@@ -2,6 +2,14 @@
   text-align: center;
 }
 
+.d-block{
+	display: block;
+}
+
+.p-40 {
+  padding: 40px;
+}
+
 .p-24{
   padding: 24px;
 }
@@ -9,6 +17,23 @@
 .p-6{
   padding: 6px;
 }
+
+.m-6{
+  margin: 6px;
+}
+
+.mb12{
+  margin-bottom: 12px;
+}
+
+.mb24{
+	margin-bottom: 24px;
+ }
+
+.pb12{
+	padding-bottom: 12px;
+}
+
 
 .flex-column{
   display: flex;
