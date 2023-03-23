@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-const DoneList = () => {
+const DoneList = (): JSX.Element => {
 	return (
 		<div className='p-24'>
 			<h2>Done Todo's</h2>

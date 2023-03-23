@@ -5,27 +5,27 @@ import Button from '@mui/material/Button';
 
 import useCreateTodo from '../hooks/useCreateTodo';
 interface IFormInput {
-	name: string;
-	description: string;
- }
+  name: string
+  description: string
+}
 
 const AddTodoForm = () => {
 
-	const {
-		register,
-		handleSubmit,
-		reset,
-		formState: { errors },
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
 	 } = useForm<IFormInput>();
 
 	 const {isLoading, isError, isSuccess, mutate} = useCreateTodo();
 	 
 	 const onSubmit = async (data: any) => {
-		mutate(data);
-		reset();
+    mutate(data);
+    reset();
 	 }
 
-	return (
+  return (
 		<div className='p-24 bg-white max-width-300'>
 			<form className='flex-column max-width-250' onSubmit={handleSubmit(data => onSubmit(data))}>
 				<TextField className='p-6' label="Name" variant="outlined" {...register("name", { required: true, minLength: 3 })} />
@@ -35,7 +35,7 @@ const AddTodoForm = () => {
 				<Button className='p-6' variant="contained" color="success" type='submit'>Add Todo</Button>
 			</form>
 		</div>
-	);
+  );
 };
 
 export default AddTodoForm;
