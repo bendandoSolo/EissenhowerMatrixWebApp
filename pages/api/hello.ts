@@ -6,8 +6,8 @@ interface Data {
 }
 
 export default function handler (
-  req: NextApiRequest,
-  res: NextApiResponse<Data>
+	req: NextApiRequest,
+	res: NextApiResponse<Data>
 ): any {
-  res.status(200).json({ name: 'John Doe' })
+	res.status(200).json({ name: 'John Doe' })
 }
