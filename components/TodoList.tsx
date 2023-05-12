@@ -26,12 +26,12 @@ const TodoList = (): JSX.Element => {
 	const [selectedTodo, setSelectedTodo] = React.useState<TodoType>()
 	const [open, close, toggle] = useToggle()
 	const [openEdit, closeEdit, toggleEdit] = useToggle()
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	const { status, data, error, isFetching } = useTodos()
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	const { isLoading, isError, isSuccess, mutate } = useDeleteTodo()
+	const { status, data, error } = useTodos() // isFetching
+	const { mutate } = useDeleteTodo() // isLoading, isError, isSuccess,
 	const { mutate: update } = useUpdateTodo()
 	const deleteTodo = (id: number): void => { mutate(id) }
+	// this needs to be removed
+	const isIncomplete = (todo: TodoType): boolean => todo.completionDate === null;
 
 	const toggleIsComplete = (todo: TodoType): void => {
 		todo.completionDate = (todo.completionDate == null) ? new Date() : undefined
@@ -54,16 +54,17 @@ const TodoList = (): JSX.Element => {
 			<div className='mb24'><h2 >Todo List</h2></div>
 			{open && <AddTodoForm/>}
 			{openEdit && <EditTodoForm todo={ selectedTodo! } toggleEdit={toggleEdit}/>}
-			<Button className="d-block" color="primary" variant="contained" onClick={openCreateTodo}>Add Todo</Button>
+			<Button className="d-block" color="primary" variant="contained" onClick={openCreateTodo}>Create New</Button>
 			{status === 'loading'
 				? ('Loading...')
 				: status === 'error'
 					? (<span>Error: {error.message}</span>)
-					: 					(
+					: (
 						<Box sx={{ width: '100%', bgcolor: 'background.paper' }}>
 							<nav aria-label="main mailbox folders">
 								<List>
-									{data.map((item: TodoType) => (
+									{/* {data.filter(isIncomplete).map((item: TodoType) => ( */}
+									{data.filter(isIncomplete).map((item: TodoType) => (
 										<ListItem key={item.id} disablePadding>
 											<ListItemButton>
 												<TaskIcon/>
@@ -71,7 +72,7 @@ const TodoList = (): JSX.Element => {
 												<ListItemText primary={item.description} />
 												<Button color="primary" onClick={ () => { deleteTodo(item.id) } } ><DeleteIcon/></Button>
 												<Button onClick={ () => { editTodo(item) } } ><EditIcon/></Button>
-												<Checkbox value={item} onClick={ () => { toggleIsComplete(item) } } />
+												<Checkbox value={!!item.completionDate} onClick={ () => { toggleIsComplete(item) } } />
 											</ListItemButton>
 										</ListItem>
 									))}

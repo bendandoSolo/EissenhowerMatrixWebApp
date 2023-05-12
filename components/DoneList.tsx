@@ -1,10 +1,11 @@
 import React from 'react'
 import useTodos from '../hooks/useTodos'
-import { Box, Button, List, ListItem, ListItemButton, ListItemText } from '@mui/material'
+import { Box, Button, Checkbox, List, ListItem, ListItemButton, ListItemText } from '@mui/material'
 import TaskIcon from '@mui/icons-material/Task'
 import DeleteIcon from '@mui/icons-material/Delete'
 import TodoType from '../types/Todo'
 import useDeleteTodo from '../hooks/useDeleteTodo'
+import useUpdateTodo from '../hooks/useUpdateTodo'
 
 const DoneList = (): JSX.Element => {
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -12,12 +13,17 @@ const DoneList = (): JSX.Element => {
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	const { isLoading, isError, isSuccess, mutate } = useDeleteTodo()
 	const deleteTodo = (id: number): void => { mutate(id) }
+	const { mutate: update } = useUpdateTodo();
 	const isComplete = (todo: TodoType): boolean => todo.completionDate !== null
+
+	const toggleIsComplete = (todo: TodoType): void => {
+		todo.completionDate = (todo.completionDate == null) ? new Date() : undefined
+		update(todo)
+	}
 
 	return (
 		<div className='p-24'>
-			<h2>Done Todo&apos;s</h2>
-			<p>Primary goal is to display a filtered set of todos here</p>
+			<h2>Done List</h2>
 			{status === 'loading'
 				? ('Loading...')
 				: status === 'error'
@@ -33,8 +39,8 @@ const DoneList = (): JSX.Element => {
 												<ListItemText primary={item.name} />
 												<ListItemText primary={item.description} />
 												<Button color="primary" onClick={ () => { deleteTodo(item.id) } } ><DeleteIcon/></Button>
-												{/* <Button onClick={ () => { editTodo(item) } } ><EditIcon/></Button>
-												<Checkbox value={item} onClick={ () => { toggleIsComplete(item) } } /> */}
+												{/* <Button onClick={ () => { editTodo(item) } } ><EditIcon/></Button> */}
+												<Checkbox checked={!!item.completionDate} onClick={ () => { toggleIsComplete(item) } } />
 											</ListItemButton>
 										</ListItem>
 									))}
