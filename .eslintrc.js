@@ -22,9 +22,11 @@ module.exports = {
   ],
   rules: {
 	'@typescript-eslint/indent': 'off',
+  "@typescript-eslint/semi": "off",
 	'indent': ['error', 'tab'],
 	 'no-tabs': 'off',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn'
+
   }
 }

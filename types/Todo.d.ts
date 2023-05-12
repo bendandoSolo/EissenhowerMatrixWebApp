@@ -1,8 +1,13 @@
 interface TodoType {
-	  id: number;
-	  name: string;
-	  description?: string;
-	  completionDate?: Date;
+	id: number
+	name: string
+    description?: string
+	completionDate?: Date
+	isComplete: () => isCompleteFunction
 }
 
-export default TodoType;
+isCompleteFunction = function () {
+	return this.completionDate !== undefined
+}
+
+export default TodoType
