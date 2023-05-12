@@ -5,6 +5,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles'
 // import { red } from '@mui/material/colors'
 
 import '../styles/main.scss'
+import ButtonAppBar from '../components/Navigation/BasicAppBar'
 
 const queryClient = new QueryClient()
 
@@ -28,6 +29,7 @@ function MyApp ({ Component, pageProps }: AppProps): JSX.Element {
 	return (
 		<ThemeProvider theme={theme}>
 			<QueryClientProvider client={queryClient}>
+				<ButtonAppBar />
 				<Component {...pageProps} />
 			</QueryClientProvider>
 		</ThemeProvider>
