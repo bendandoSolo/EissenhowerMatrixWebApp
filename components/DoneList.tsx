@@ -21,7 +21,7 @@ const DoneList = (): JSX.Element => {
 								<List>
 									{data.filter(isComplete).map((item: TodoType) => (
 										<ListItem key={item.id} disablePadding>
-											<TodoItemView item={item} />
+											<TodoItemView item={item} canEdit={false}/>
 										</ListItem>
 									))}
 								</List>
