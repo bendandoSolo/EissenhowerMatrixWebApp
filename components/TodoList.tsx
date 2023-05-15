@@ -22,6 +22,8 @@ import TodoType from '../types/Todo'
 
 import { Checkbox } from '@mui/material'
 
+import TodoItemView from './TodoItemView'
+
 const TodoList = (): JSX.Element => {
 	const [selectedTodo, setSelectedTodo] = React.useState<TodoType>()
 	const [open, close, toggle] = useToggle()
@@ -67,12 +69,13 @@ const TodoList = (): JSX.Element => {
 									{data.filter(isIncomplete).map((item: TodoType) => (
 										<ListItem key={item.id} disablePadding>
 											<ListItemButton>
-												<TaskIcon/>
+												<TodoItemView item={item} canEdit={true}/>
+												{/* <TaskIcon/>	 
 												<ListItemText primary={item.name} />
 												<ListItemText primary={item.description} />
 												<Button color="primary" onClick={ () => { deleteTodo(item.id) } } ><DeleteIcon/></Button>
 												<Button onClick={ () => { editTodo(item) } } ><EditIcon/></Button>
-												<Checkbox value={!!item.completionDate} onClick={ () => { toggleIsComplete(item) } } />
+												<Checkbox value={!!item.completionDate} onClick={ () => { toggleIsComplete(item) } } /> */}
 											</ListItemButton>
 										</ListItem>
 									))}

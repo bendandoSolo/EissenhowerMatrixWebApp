@@ -40,6 +40,12 @@
   flex-direction: column;
 }
 
+.flex-row{
+  display: flex;
+  flex-direction: row;
+}
+
+
 .max-width-250{
   max-width: 250px;
 }
