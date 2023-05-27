@@ -3,13 +3,13 @@ import Head from 'next/head'
 // import styles from '../styles/Home.module.css'
 
 import APITests from '../components/APITests'
-import TodoList from '../components/TodoList'
-import DoneList from '../components/DoneList'
+import TodoList from '../components/Lists/TodoList'
+import DoneList from '../components/Lists/DoneList'
 import { Grid } from '@mui/material'
 
 const Home: NextPage = () => {
 	return (
-		<>		
+		<>
 			<div className='text-center p-40'>
 				<Head>
 					<title >Eissenhower Matrix App</title>

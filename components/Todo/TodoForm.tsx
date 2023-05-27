@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { Button, TextField } from '@mui/material'
-import TodoType from '../types/Todo'
+import TodoType from '../../types/Todo'
 
 // not allowing to edit isComplete
 const TodoForm = ({ onSubmit, todo }: { onSubmit: (data: TodoType) => void, todo: TodoType | undefined }): JSX.Element => {

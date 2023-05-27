@@ -6,12 +6,12 @@ import ListItem from '@mui/material/ListItem'
 import ListItemButton from '@mui/material/ListItemButton'
 import Button from '@mui/material/Button'
 
-import AddTodoForm from './AddTodoForm'
-import useToggle from '../hooks/useToggle'
-import useTodos from '../hooks/useTodos'
-import TodoType from '../types/Todo'
+import AddTodoForm from '../Todo/AddTodoForm'
+import useToggle from '../../hooks/useToggle'
+import useTodos from '../../hooks/useTodos'
+import TodoType from '../../types/Todo'
 
-import TodoItemView from './TodoItemView'
+import TodoItemView from '../Todo/TodoItemView'
 
 const TodoList = (): JSX.Element => {
 	const [open, close, toggle] = useToggle()

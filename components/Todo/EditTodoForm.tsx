@@ -1,6 +1,6 @@
 import React from 'react'
-import useUpdateTodo from '../hooks/useUpdateTodo'
-import TodoType from '../types/Todo'
+import useUpdateTodo from '../../hooks/useUpdateTodo'
+import TodoType from '../../types/Todo'
 import TodoForm from './TodoForm'
 
 const EditTodoForm = ({ todo, toggleEdit }: { todo: TodoType, toggleEdit: () => void }): JSX.Element => {

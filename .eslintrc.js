@@ -12,8 +12,8 @@ module.exports = {
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
+    project: './tsconfig.json',
     sourceType: 'module',
-    tsconfigRootDir: __dirname
   },
   plugins: [
     'react',
@@ -26,6 +26,7 @@ module.exports = {
     indent: 'off',
     'no-tabs': 'off',
     'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'warn'
+    'react-hooks/exhaustive-deps': 'warn',
+    semi: 'off'
   }
 }

@@ -1,8 +1,8 @@
 import React from 'react'
-import useTodos from '../hooks/useTodos'
+import useTodos from '../../hooks/useTodos'
 import { Box, List, ListItem } from '@mui/material'
-import TodoType from '../types/Todo'
-import TodoItemView from './TodoItemView'
+import TodoType from '../../types/Todo'
+import TodoItemView from '../Todo/TodoItemView'
 
 const DoneList = (): JSX.Element => {
 	const { status, data, error, isFetching } = useTodos();
