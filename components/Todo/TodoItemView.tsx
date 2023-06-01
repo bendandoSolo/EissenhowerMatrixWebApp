@@ -10,7 +10,6 @@ import useToggle from '../../hooks/useToggle'
 import EditTodoForm from './EditTodoForm'
 import PrioritySelect from '../SelectBox';
 
-
 interface TodoItemViewProps {
     item: TodoType
     canEdit: boolean

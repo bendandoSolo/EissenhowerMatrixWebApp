@@ -5,7 +5,9 @@ import Head from 'next/head'
 import APITests from '../components/APITests'
 import TodoList from '../components/Lists/TodoList'
 import DoneList from '../components/Lists/DoneList'
-import { Grid } from '@mui/material'
+import { Grid } from '@mui/material'; // best to use css grid 
+
+import EissenhowerMatrix from '../components/EissenhowerMatrix';
 
 const Home: NextPage = () => {
 	return (
@@ -32,6 +34,8 @@ const Home: NextPage = () => {
 						<DoneList/>
 					</Grid>
 				</Grid>
+				<hr/>
+				<EissenhowerMatrix />
 				<hr/>
 				<APITests />
 			</div>
