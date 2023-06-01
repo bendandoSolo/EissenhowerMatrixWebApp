@@ -14,7 +14,7 @@ const PrioritySelect = ({ todo, togglePriority }: { todo: TodoType, togglePriori
   const handleChange = (event: SelectChangeEvent): void => {
     todo.priority = parseInt(event.target.value);
     update(todo);
-    togglePriority();
+    // togglePriority();
   };
 
   const convertPriority = (priority: number): string => {
@@ -41,7 +41,7 @@ const PrioritySelect = ({ todo, togglePriority }: { todo: TodoType, togglePriori
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value={convertPriority(todo.priority)}
+          value={todo.priority.toString()}
           label="Priority"
           onChange={handleChange}
         >

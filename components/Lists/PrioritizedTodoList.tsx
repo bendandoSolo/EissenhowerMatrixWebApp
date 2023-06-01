@@ -5,6 +5,7 @@ import List from '@mui/material/List'
 import ListItem from '@mui/material/ListItem'
 import ListItemButton from '@mui/material/ListItemButton'
 import Button from '@mui/material/Button'
+import AddBoxIcon from '@mui/icons-material/AddBox';
 
 import AddTodoForm from '../Todo/AddTodoForm'
 import useToggle from '../../hooks/useToggle'
@@ -32,7 +33,7 @@ const PrioritizedTodoList = ({ priority }: { priority: number }): JSX.Element =>
 		<div className='p-24'>
 			<div className='mb24'><h2 >Todo List we need to specify priority</h2></div>
 			{open && <AddTodoForm/>}
-			<Button className="d-block" color="primary" variant="contained" onClick={openCreateTodo}>Create New</Button>
+			< Button className="d-block" color="primary" variant="contained" onClick={openCreateTodo}><AddBoxIcon/></Button>
 			{status === 'loading'
 				? ('Loading...')
 				: status === 'error'
@@ -40,6 +41,7 @@ const PrioritizedTodoList = ({ priority }: { priority: number }): JSX.Element =>
 					: (
 						<Box sx={{ width: '100%', bgcolor: 'background.paper' }}>
 							<nav aria-label="main mailbox folders">
+								<p>{ JSON.stringify(data) }</p>
 								<List>
 									{data.filter(isIncomplete).filter(hasPriority).map((item: TodoType) => (
 										<ListItem key={item.id} disablePadding>

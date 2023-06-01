@@ -12,7 +12,7 @@ const EditTodoForm = ({ todo, toggleEdit }: { todo: TodoType, toggleEdit: () => 
 	}
 
 	return (
-		<div style={{zIndex: '100', position: 'absolute', top: '75px'}}>
+		<div style={{ zIndex: '100', position: 'absolute', top: '75px' }}>
 			<TodoForm onSubmit={onSubmit} todo={todo} />
 		</div>
 	)
