@@ -8,7 +8,7 @@ import useDeleteTodo from '../../hooks/useDeleteTodo'
 import useUpdateTodo from '../../hooks/useUpdateTodo'
 import useToggle from '../../hooks/useToggle'
 import EditTodoForm from './EditTodoForm'
-import BasicSelect from '../SelectBox';
+import PrioritySelect from '../SelectBox';
 
 
 interface TodoItemViewProps {
@@ -52,8 +52,9 @@ const TodoItemView: React.FC<TodoItemViewProps> = ({ item, canEdit }) => {
                 {canEdit && <Button onClick={ () => { editTodo(item) } } ><EditIcon/></Button> }
                 <Checkbox checked={!(item.completionDate == null)} onClick={() => { toggleIsComplete(item); } } />
             </ListItemButton>
+            {/* // is toggle edit needed? */}
             {openEdit && <EditTodoForm todo={selectedTodo!} toggleEdit={toggleEdit}/>}
-            {openPriority && <BasicSelect />}
+            {openPriority && <PrioritySelect todo={selectedTodo!} togglePriority={togglePriority}/>}
         </>
     )
 }

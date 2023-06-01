@@ -1,26 +1,48 @@
-import * as React from 'react';
+
 import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
+import TodoType from '../types/Todo';
 
-function BasicSelect (): JSX.Element {
-  const [age, setAge] = React.useState('Unassigned'); // remove
+import useUpdateTodo from '../hooks/useUpdateTodo';
+
+const PrioritySelect = ({ todo, togglePriority }: { todo: TodoType, togglePriority: () => void }): JSX.Element => {
+  const { mutate: update } = useUpdateTodo();
 
   const handleChange = (event: SelectChangeEvent): void => {
-    setAge(event.target.value); //call put to update priority, close select
+    todo.priority = parseInt(event.target.value);
+    update(todo);
+    togglePriority();
   };
+
+  const convertPriority = (priority: number): string => {
+      switch (priority) {
+        case 0:
+          return 'Unassigned';
+        case 1:
+          return 'UrgentPriority';
+        case 2:
+          return 'NotUrgentPriority';
+        case 3:
+          return 'UrgentLowPriority';
+        case 4:
+          return 'NotUrgentLowPriority';
+        default:
+          return 'Unassigned';
+    }
+  }
 
   return (
     <Box sx={{ minWidth: 120 }}>
       <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Priority</InputLabel>
+        <InputLabel id="demo-simple-select-label">{convertPriority(todo.priority)}</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value={age}
-          label="Age"
+          value={convertPriority(todo.priority)}
+          label="Priority"
           onChange={handleChange}
         >
           <MenuItem value={0}>Unassigned</MenuItem>
@@ -34,4 +56,4 @@ function BasicSelect (): JSX.Element {
   );
 }
 
-export default BasicSelect;
+export default PrioritySelect;
