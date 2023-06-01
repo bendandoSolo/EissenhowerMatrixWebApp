@@ -5,6 +5,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import TodoType from '../types/Todo';
+import priorityEnum from '../types/PriorityEnumType';
 
 import useUpdateTodo from '../hooks/useUpdateTodo';
 
@@ -14,30 +15,13 @@ const PrioritySelect = ({ todo, togglePriority }: { todo: TodoType, togglePriori
   const handleChange = (event: SelectChangeEvent): void => {
     todo.priority = parseInt(event.target.value);
     update(todo);
-    // togglePriority();
+    togglePriority();
   };
-
-  const convertPriority = (priority: number): string => {
-      switch (priority) {
-        case 0:
-          return 'Unassigned';
-        case 1:
-          return 'UrgentPriority';
-        case 2:
-          return 'NotUrgentPriority';
-        case 3:
-          return 'UrgentLowPriority';
-        case 4:
-          return 'NotUrgentLowPriority';
-        default:
-          return 'Unassigned';
-    }
-  }
 
   return (
     <Box sx={{ minWidth: 120 }}>
       <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">{convertPriority(todo.priority)}</InputLabel>
+        <InputLabel id="demo-simple-select-label">{priorityEnum[todo.priority]}</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"

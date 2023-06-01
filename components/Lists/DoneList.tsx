@@ -5,6 +5,7 @@ import TodoType from '../../types/Todo'
 import TodoItemView from '../Todo/TodoItemView'
 
 const DoneList = (): JSX.Element => {
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	const { status, data, error, isFetching } = useTodos();
 	const isComplete = (todo: TodoType): boolean => todo.completionDate !== null
 

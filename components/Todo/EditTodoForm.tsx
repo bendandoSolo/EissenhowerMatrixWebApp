@@ -18,4 +18,4 @@ const EditTodoForm = ({ todo, toggleEdit }: { todo: TodoType, toggleEdit: () => 
 	)
 }
 
-export default EditTodoForm
+export default EditTodoForm;

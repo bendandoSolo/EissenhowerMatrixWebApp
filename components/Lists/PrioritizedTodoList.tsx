@@ -13,8 +13,7 @@ import useTodos from '../../hooks/useTodos'
 import TodoType from '../../types/Todo'
 
 import TodoItemView from '../Todo/TodoItemView'
-
-// const EditTodoForm = ({ todo, toggleEdit }: { todo: TodoType, toggleEdit: () => void }): JSX.Element => {
+import priorityEnum from '../../types/PriorityEnumType'
 
 const PrioritizedTodoList = ({ priority }: { priority: number }): JSX.Element => {
 	const [open, close, toggle] = useToggle()
@@ -32,7 +31,7 @@ const PrioritizedTodoList = ({ priority }: { priority: number }): JSX.Element =>
 
 	return (
 		<div className='p-24'>
-			<div className='mb24'><h2 >Todo List we need to specify priority</h2></div>
+			<div className='mb24'><h2 >{priorityEnum[priority]}</h2></div>
 			{open && <AddTodoForm/>}
 			< Button className="d-block" color="primary" variant="contained" onClick={openCreateTodo}><AddBoxIcon/></Button>
 			{status === 'loading'
