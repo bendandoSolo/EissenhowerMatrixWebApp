@@ -19,7 +19,8 @@ import TodoItemView from '../Todo/TodoItemView'
 const PrioritizedTodoList = ({ priority }: { priority: number }): JSX.Element => {
 	const [open, close, toggle] = useToggle()
 	const [openEdit, closeEdit, toggleEdit] = useToggle()
-	const { status, data, error } = useTodos() // isFetching
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	const { status, data, error, isFetching } = useTodos();
 
 	const isIncomplete = (todo: TodoType): boolean => todo.completionDate === null;
 	const hasPriority = (todo: TodoType): boolean => todo.priority === priority;
@@ -41,7 +42,6 @@ const PrioritizedTodoList = ({ priority }: { priority: number }): JSX.Element =>
 					: (
 						<Box sx={{ width: '100%', bgcolor: 'background.paper' }}>
 							<nav aria-label="main mailbox folders">
-								<p>{ JSON.stringify(data) }</p>
 								<List>
 									{data.filter(isIncomplete).filter(hasPriority).map((item: TodoType) => (
 										<ListItem key={item.id} disablePadding>

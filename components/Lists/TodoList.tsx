@@ -16,8 +16,9 @@ import TodoItemView from '../Todo/TodoItemView'
 
 const TodoList = (): JSX.Element => {
 	const [open, close, toggle] = useToggle()
-	const [openEdit, closeEdit, toggleEdit] = useToggle()
-	const { status, data, error } = useTodos() // isFetching
+	const [openEdit, closeEdit, toggleEdit] = useToggle();
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	const { status, data, error, isFetched } = useTodos();
 
 	const isIncomplete = (todo: TodoType): boolean => todo.completionDate === null;
 
@@ -38,7 +39,6 @@ const TodoList = (): JSX.Element => {
 					: (
 						<Box sx={{ width: '100%', bgcolor: 'background.paper' }}>
 							<nav aria-label="main mailbox folders">
-								<p>{ JSON.stringify(data) }</p>
 								<List>
 									{data.filter(isIncomplete).map((item: TodoType) => (
 										<ListItem key={item.id} disablePadding>

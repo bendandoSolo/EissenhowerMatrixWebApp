@@ -1,14 +1,12 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-// import styles from '../styles/Home.module.css'
+import type { NextPage } from 'next';
+import Head from 'next/head';
 
-import APITests from '../components/APITests'
-import TodoList from '../components/Lists/TodoList'
-import DoneList from '../components/Lists/DoneList'
+import APITests from '../components/APITests';
+import TodoList from '../components/Lists/TodoList';
+import DoneList from '../components/Lists/DoneList';
 import { Grid } from '@mui/material'; // best to use css grid
 
 import EissenhowerMatrix from '../components/EissenhowerMatrix';
-import PrioritizedTodoList from '../components/Lists/PrioritizedTodoList'
 
 const Home: NextPage = () => {
 	return (
@@ -35,16 +33,8 @@ const Home: NextPage = () => {
 						<DoneList/>
 					</Grid>
 				</Grid>
-				{/*
-				<div className='eissenhowerMatrix-container'>
-					<PrioritizedTodoList priority={1}/>
-					<PrioritizedTodoList priority={2}/>
-					<PrioritizedTodoList priority={3}/>
-					<PrioritizedTodoList priority={4}/>
-				</div>
-				<hr/>
 				<EissenhowerMatrix />
-				<hr/> */}
+				<hr/>
 				<APITests />
 			</div>
 		</>
