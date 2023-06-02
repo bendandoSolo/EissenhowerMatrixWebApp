@@ -4,18 +4,21 @@
 import { Packer } from 'docx';
 import { saveAs } from 'file-saver';
 
-import { experiences, education, skills, achievements } from '../../services/cv-data';
-import { DocumentCreator } from '../../services/cv-generator';
+// import { experiences, education, skills, achievements } from '../../services/cv-data';
+// import { DocumentCreator } from '../../services/cv-generator';
+import { DocumentCreator } from '../../services/planner-generator';
 
 const MyDocument = (): JSX.Element => {
   function generate (): void {
         const documentCreator = new DocumentCreator();
-        const doc = documentCreator.create([
-          experiences,
-          education,
-          skills,
-          achievements
-        ]);
+        // const doc = documentCreator.create([
+        //   experiences,
+        //   education,
+        //   skills,
+        //   achievements
+        // ]);
+
+        const doc = documentCreator.create();
 
         void Packer.toBlob(doc).then(blob => {
           console.log(blob);
