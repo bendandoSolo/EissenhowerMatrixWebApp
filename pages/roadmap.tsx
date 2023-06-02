@@ -7,8 +7,15 @@ const RoadMap = (): JSX.Element => (
 			<h1>Road of Project Initially for Quick Developer Reference</h1>
 			<ul>
 				<li><h2>Get the app useful for me ASAP</h2></li>
+
+				<li>Get this printing whole document for my weekly goals</li>
+				<li>Get this being able to set goals, top projects etc</li>
+				<li>Link to Calendar</li>
+				<li>Link to Jira / Devops?</li>
+
 				<li>Get some drag n drop working to add to Eissenhower matrix</li>
-				<li>Add persistent data</li>
+				<li>Work out which fucking pluggin is breaking this app ffs</li>
+				<li>Consider react native version</li>
 				<li>Add about page about the eissenhower matrix, separate from app page, just using it</li>
 				<li>Use the persistent data to store information about next jobs for the app</li>
 				<li>Create consistent styling</li>
