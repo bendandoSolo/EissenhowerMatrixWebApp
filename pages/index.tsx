@@ -7,6 +7,7 @@ import DoneList from '../components/Lists/DoneList';
 import { Grid } from '@mui/material'; // best to use css grid
 
 import EissenhowerMatrix from '../components/EissenhowerMatrix';
+import MyDocument from '../components/Printing/Basic';
 
 const Home: NextPage = () => {
 	return (
@@ -36,6 +37,7 @@ const Home: NextPage = () => {
 				<EissenhowerMatrix />
 				<hr/>
 				<APITests />
+				<MyDocument />
 			</div>
 		</>
 	)
