@@ -4,6 +4,7 @@ import {
     Document,
     HeadingLevel,
     Packer,
+    PageMargin,
     Paragraph,
     TabStopPosition,
     TabStopType,
@@ -26,6 +27,16 @@ import {
         },
         sections: [
           {
+            properties: {
+                page: {
+                    margin: {
+                        top: 1000,
+                        right: 1000,
+                        bottom: 1000,
+                        left: 1000
+                    }
+                }
+            },
             children: [
               // new Paragraph({
               //   children: [
@@ -52,9 +63,14 @@ import {
                     })
                 ]
             }),
-             // this.createHeading('Long Term Goals'),
-             // this.createBorderedParagraph('I have borders on my top and bottom sides!'),
-              this.createTable(1)
+              this.createHeading(''),
+              this.createHeading('Long Term Goals'),
+              this.createHeading(''),
+              this.createGoalsTable(),
+              this.createHeading(''),
+              this.createHeading('PROJECTS AND NEXT STEPS'),
+              this.createHeading(''),
+              this.createProjectsTable(),
             ]
           }]
       });
@@ -175,10 +191,19 @@ import {
 
     public createHeading (text: string): Paragraph {
       return new Paragraph({
-        text,
-        heading: HeadingLevel.HEADING_1,
-        thematicBreak: true
-      });
+         heading: HeadingLevel.HEADING_3,
+          alignment: AlignmentType.CENTER,
+          children: [
+          new TextRun({
+              text,
+              bold: true,
+              underline: {
+                color: '000000'
+            },
+            color: '000000'
+          })
+        ]
+        });
     }
 
     public createBorderedParagraph (text: string): Paragraph {
@@ -213,16 +238,43 @@ import {
       });
     }
 
-    public createTable (rows: number): Table {
+    public createGoalsTable (): Table {
       return new Table({
         width: {
             size: 100,
             type: WidthType.PERCENTAGE
         },
+        borders: {
+          top: {
+            color: '#000000',
+            space: 1,
+            style: BorderStyle.THICK,
+            size: 12
+          },
+          bottom: {
+              color: 'auto',
+              space: 1,
+              style: BorderStyle.THICK,
+              size: 12
+          },
+          left: {
+            color: 'auto',
+            space: 1,
+            style: BorderStyle.THICK,
+            size: 12
+          },
+          right: {
+          color: 'auto',
+          space: 1,
+          style: BorderStyle.THICK,
+          size: 12
+          }
+        },
          rows: [
             new TableRow({
               children: [
                   new TableCell({
+                      columnSpan: 2,
                       children: [
                         new Paragraph('“You have no idea how efficient, efficient people get, it’s completely off the chart” – JB Peterson'),
                         new Paragraph('The Average Worker spends 2.1 hours distracted, it takes 21 minutes to get back to work – USE DISTRACTION APP'),
@@ -240,278 +292,228 @@ import {
                         }
                     })
                 ]
-            })
+            }),
+            new TableRow({
+                children: [
+                    new TableCell({
+                        children: [
+                          new Paragraph('BLOCK TIME: WAKE @ 7, WORK 8-7'),
+                          new Paragraph('8-9.30 : [3]'),
+                          new Paragraph('9.45 - 11.15 : [3]'),
+                          new Paragraph('11.30 - 1 : [3]'),
+                          new Paragraph('----------------'),
+                          new Paragraph('1.45 - 3.15 : [3]'),
+                          new Paragraph('3.30 - 5 : [3]'),
+                          new Paragraph('5.15 - 6.45 : [3]')
+                      ],
+                        borders: {
+                          top: { style: BorderStyle.NONE },
+                          bottom: { style: BorderStyle.NONE },
+                          left: { style: BorderStyle.NONE },
+                          right: { style: BorderStyle.NONE }
+                          }
+                      }),
+                      new TableCell({
+                        children: [
+                          new Paragraph('BONUS WEEKLY TASKS:'),
+                          new Paragraph('PRIMARY: KEEP JOB: 12+ POMODOROS'),
+                          new Paragraph('SECONDARY 1: Beat Jez @ Tennis, 1x Tennis/Week, 1x Cardio/Week'),
+                          new Paragraph('SECONDARY 2: No Smoking'),
+                          new Paragraph('SECONDARY 3: SOL, Counselling, Date/fortnight, Movie/week')
+                      ],
+                        borders: {
+                          top: { style: BorderStyle.NONE },
+                          bottom: { style: BorderStyle.NONE },
+                          left: { style: BorderStyle.NONE },
+                          right: { style: BorderStyle.NONE }
+                          }
+                      })
+                  ]
+              })
       ]
-        //     new TableRow({
-        //       children: [
-        //           new TableCell({
-        //               children: [new Paragraph('hello this should be a ba')]
-        //           })
-        //       ]
-        //     }),
-        //     new TableRow({
-        //       children: [
-        //           new TableCell({
-        //               children: [new Paragraph('Cell 1')],
-        //               borders: {
-        //                   top: { style: BorderStyle.NONE },
-        //                   bottom: { style: BorderStyle.NONE },
-        //                   left: { style: BorderStyle.NONE },
-        //                   right: { style: BorderStyle.NONE }
-        //               }
-        //           }
-        //           ),
-        //           new TableCell({
-        //               children: [new Paragraph('Cell 2')],
-        //               borders: {
-        //                   top: { style: BorderStyle.NONE },
-        //                   bottom: { style: BorderStyle.NONE },
-        //                   left: { style: BorderStyle.NONE },
-        //                   right: { style: BorderStyle.NONE }
-        //               }
-        //           })
-        //       ]
-        //     })
-        //   ],
-        // width: {
-        //   size: 100,
-        //   type: WidthType.PERCENTAGE
-        // },
-        // borders: {
-        //   top: {
-        //     color: '#000000',
-        //     space: 1,
-        //     style: BorderStyle.THICK,
-        //     size: 6
-        //   },
-        //   bottom: {
-        //       color: 'auto',
-        //       space: 1,
-        //       style: BorderStyle.THICK,
-        //       size: 6
-        //   },
-        //   left: {
-        //     color: 'auto',
-        //     space: 1,
-        //     style: BorderStyle.THICK,
-        //     size: 6
-        //   },
-        //   right: {
-        //   color: 'auto',
-        //   space: 1,
-        //   style: BorderStyle.THICK,
-        //   size: 6
-        //   }
-        // }
     });
   }
+
+  public createProjectsTable (): Table {
+    return new Table({
+      width: {
+          size: 100,
+          type: WidthType.PERCENTAGE
+      },
+       rows: [
+          new TableRow({
+              children: [
+                  new TableCell({
+                      children: [
+                        new Paragraph('')
+                    ]
+                    }),
+                    new TableCell({
+                        children: [
+                          new Paragraph('')
+                      ]
+                      }),
+                      new TableCell({
+                        children: [
+                          new Paragraph('')
+                      ]
+                      })
+                ]
+            }),
+            new TableRow({
+                children: [
+                    new TableCell({
+                        children: [
+                          new Paragraph('1')
+                      ]
+                      }),
+                      new TableCell({
+                          children: [
+                            new Paragraph('1')
+                        ]
+                        }),
+                        new TableCell({
+                          children: [
+                            new Paragraph('1')
+                        ]
+                        })
+                  ]
+              }),
+            new TableRow({
+                children: [
+                    new TableCell({
+                        children: [
+                          new Paragraph('2')
+                      ]
+                      }),
+                      new TableCell({
+                          children: [
+                            new Paragraph('2')
+                        ]
+                        }),
+                        new TableCell({
+                          children: [
+                            new Paragraph('2')
+                        ]
+                        })
+                  ]
+              }),
+            new TableRow({
+                children: [
+                    new TableCell({
+                        children: [
+                          new Paragraph('3')
+                      ]
+                      }),
+                      new TableCell({
+                          children: [
+                            new Paragraph('3')
+                        ]
+                        }),
+                        new TableCell({
+                          children: [
+                            new Paragraph('3')
+                        ]
+                        })
+                  ]
+              }),
+            new TableRow({
+                children: [
+                    new TableCell({
+                        children: [
+                          new Paragraph('4')
+                      ]
+                      }),
+                      new TableCell({
+                          children: [
+                            new Paragraph('4')
+                        ]
+                        }),
+                        new TableCell({
+                          children: [
+                            new Paragraph('4')
+                        ]
+                        })
+                  ]
+              }),
+            new TableRow({
+                children: [
+                    new TableCell({
+                        children: [
+                          new Paragraph('5')
+                      ]
+                      }),
+                      new TableCell({
+                          children: [
+                            new Paragraph('5')
+                        ]
+                        }),
+                        new TableCell({
+                          children: [
+                            new Paragraph('5')
+                        ]
+                        })
+                  ]
+              }),
+            new TableRow({
+                children: [
+                    new TableCell({
+                        children: [
+                          new Paragraph('6')
+                      ]
+                      }),
+                      new TableCell({
+                          children: [
+                            new Paragraph('6')
+                        ]
+                        }),
+                        new TableCell({
+                          children: [
+                            new Paragraph('6')
+                        ]
+                        })
+                  ]
+              }),
+            new TableRow({
+                children: [
+                    new TableCell({
+                        children: [
+                          new Paragraph('7')
+                      ]
+                      }),
+                      new TableCell({
+                          children: [
+                            new Paragraph('7')
+                        ]
+                        }),
+                        new TableCell({
+                          children: [
+                            new Paragraph('7')
+                        ]
+                        })
+                  ]
+              }),
+              new TableRow({
+                children: [
+                    new TableCell({
+                        children: [
+                          new Paragraph('8')
+                      ]
+                      }),
+                      new TableCell({
+                          children: [
+                            new Paragraph('8')
+                        ]
+                        }),
+                        new TableCell({
+                          children: [
+                            new Paragraph('8')
+                        ]
+                        })
+                  ]
+              })
+    ]
+  });
 }
 
-//     public createTable (rows: number): Table {
-//       return new Table({
-//         rows: [
-//             new TableRow({
-//               children: [
-//                   new TableCell({
-//                       children: [new Paragraph('hello this should be a ba')],
-//                       borders: {
-//                         top: { style: BorderStyle.NONE },
-//                         bottom: { style: BorderStyle.NONE },
-//                         left: { style: BorderStyle.NONE },
-//                         right: { style: BorderStyle.NONE },
-//                         }
-//                     })
-//                 ]
-//             }),
-//             new TableRow({
-//               children: [
-//                   new TableCell({
-//                       children: [new Paragraph('hello this should be a ba')]
-//                   })
-//               ]
-//             }),
-//             new TableRow({
-//               children: [
-//                   new TableCell({
-//                       children: [new Paragraph('Cell 1')],
-//                       borders: {
-//                           top: { style: BorderStyle.NONE },
-//                           bottom: { style: BorderStyle.NONE },
-//                           left: { style: BorderStyle.NONE },
-//                           right: { style: BorderStyle.NONE }
-//                       }
-//                   }
-//                   ),
-//                   new TableCell({
-//                       children: [new Paragraph('Cell 2')],
-//                       borders: {
-//                           top: { style: BorderStyle.NONE },
-//                           bottom: { style: BorderStyle.NONE },
-//                           left: { style: BorderStyle.NONE },
-//                           right: { style: BorderStyle.NONE }
-//                       }
-//                   })
-//               ]
-//             })
-//           ],
-//         width: {
-//           size: 100,
-//           type: WidthType.PERCENTAGE
-//         },
-//         borders: {
-//           top: {
-//             color: '#000000',
-//             space: 1,
-//             style: BorderStyle.THICK,
-//             size: 6
-//           },
-//           bottom: {
-//               color: 'auto',
-//               space: 1,
-//               style: BorderStyle.THICK,
-//               size: 6
-//           },
-//           left: {
-//             color: 'auto',
-//             space: 1,
-//             style: BorderStyle.THICK,
-//             size: 6
-//           },
-//           right: {
-//           color: 'auto',
-//           space: 1,
-//           style: BorderStyle.THICK,
-//           size: 6
-//           }
-//         }
-//     });
-//   }
-// }
-
-  //   public createSubHeading (text: string): Paragraph {
-  //     return new Paragraph({
-  //       text,
-  //       heading: HeadingLevel.HEADING_2
-  //     });
-  //   }
-
-  //   public createInstitutionHeader (
-  //     institutionName: string,
-  //     dateText: string
-  //   ): Paragraph {
-  //     return new Paragraph({
-  //       tabStops: [
-  //         {
-  //           type: TabStopType.RIGHT,
-  //           position: TabStopPosition.MAX
-  //         }
-  //       ],
-  //       children: [
-  //         new TextRun({
-  //           text: institutionName,
-  //           bold: true
-  //         }),
-  //         new TextRun({
-  //           text: `\t${dateText}`,
-  //           bold: true
-  //         })
-  //       ]
-  //     });
-  //   }
-
-  //   public createRoleText (roleText: string): Paragraph {
-  //     return new Paragraph({
-  //       children: [
-  //         new TextRun({
-  //           text: roleText,
-  //           italics: true
-  //         })
-  //       ]
-  //     });
-  //   }
-
-  //   public createBullet (text: string): Paragraph {
-  //     return new Paragraph({
-  //       text,
-  //       bullet: {
-  //         level: 0
-  //       }
-  //     });
-  //   }
-
-  //   // tslint:disable-next-line:no-any
-  //   public createSkillList (skills: any[]): Paragraph {
-  //     return new Paragraph({
-  //       children: [new TextRun(skills.map(skill => skill.name).join(', ') + '.')]
-  //     });
-  //   }
-
-  //   // tslint:disable-next-line:no-any
-  //   public createAchivementsList (achivements: any[]): Paragraph[] {
-  //     return achivements.map(
-  //       achievement =>
-  //         new Paragraph({
-  //           text: achievement.name,
-  //           bullet: {
-  //             level: 0
-  //           }
-  //         })
-  //     );
-  //   }
-
-  //   public createInterests (interests: string): Paragraph {
-  //     return new Paragraph({
-  //       children: [new TextRun(interests)]
-  //     });
-  //   }
-
-  //   public splitParagraphIntoBullets (text: string): string[] {
-  //     return text.split('\n\n');
-  //   }
-
-  //   // tslint:disable-next-line:no-any
-  //   public createPositionDateText (
-  //     startDate: any,
-  //     endDate: any,
-  //     isCurrent: boolean
-  //   ): string {
-  //     const startDateText =
-  //       this.getMonthFromInt(startDate.month) + '. ' + startDate.year;
-  //     const endDateText = isCurrent
-  //       ? 'Present'
-  //       : `${this.getMonthFromInt(endDate.month)}. ${endDate.year}`;
-
-  //     return `${startDateText} - ${endDateText}`;
-  //   }
-
-  //   public getMonthFromInt (value: number): string {
-  //     switch (value) {
-  //       case 1:
-  //         return 'Jan';
-  //       case 2:
-  //         return 'Feb';
-  //       case 3:
-  //         return 'Mar';
-  //       case 4:
-  //         return 'Apr';
-  //       case 5:
-  //         return 'May';
-  //       case 6:
-  //         return 'Jun';
-  //       case 7:
-  //         return 'Jul';
-  //       case 8:
-  //         return 'Aug';
-  //       case 9:
-  //         return 'Sept';
-  //       case 10:
-  //         return 'Oct';
-  //       case 11:
-  //         return 'Nov';
-  //       case 12:
-  //         return 'Dec';
-  //       default:
-  //         return 'N/A';
-  //     }
-  //   }
-  // }
+}

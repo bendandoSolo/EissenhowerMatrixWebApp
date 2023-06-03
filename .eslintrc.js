@@ -25,6 +25,8 @@ module.exports = {
     '@typescript-eslint/semi': 'off',
     indent: 'off',
     'no-tabs': 'off',
+    'padded-blocks': 'off',
+    'comma-dangle': 'off',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     semi: 'off'

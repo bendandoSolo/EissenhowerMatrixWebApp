@@ -9,6 +9,9 @@ const RoadMap = (): JSX.Element => (
 				<li><h2>Get the app useful for me ASAP</h2></li>
 
 				<li>Get this printing whole document for my weekly goals</li>
+				<li>Auto add date , for next day on top of document</li>
+
+
 				<li>Get this being able to set goals, top projects etc</li>
 				<li>Link to Calendar</li>
 				<li>Link to Jira / Devops?</li>
