@@ -38,22 +38,12 @@ import {
                 }
             },
             children: [
-              // new Paragraph({
-              //   children: [
-              //     new TextRun({
-              //         text: 'Hello, world!',
-              //         color: 'ff0000' // hex color value
-              //     })
-              //   ],
-              //   text: 'BENDANDO HIGH PERFORMANCE WEEKLY PRODUCTIVITY PLANNER',
-              //   heading: HeadingLevel.HEADING_2
-              // }),
               new Paragraph({
                 heading: HeadingLevel.HEADING_2,
                 alignment: AlignmentType.CENTER,
                 children: [
                     new TextRun({
-                        text: 'HIGH PERFORMANCE WEEKLY PRODUCTIVITY PLANNER',
+                        text: 'BENDANDO HIGH PERFORMANCE WEEKLY PRODUCTIVITY PLANNER',
                         bold: true,
                         underline: {
                           type: UnderlineType.SINGLE,
@@ -71,6 +61,16 @@ import {
               this.createHeading('PROJECTS AND NEXT STEPS'),
               this.createHeading(''),
               this.createProjectsTable(),
+              this.createHeading(''),
+              this.createHeading(''),
+              this.peopleToContactTable(),
+              this.createHeading(''),
+              this.createHeading(''),
+              this.createHeading(''),
+              this.createHeading(''),
+              this.createEissenhowerMatrix(),
+              this.createHeading(''),
+              this.createDailyProgressReportTables(),
             ]
           }]
       });
@@ -282,7 +282,7 @@ import {
                         new Paragraph('bu-app.com  -> stoicism, Markus Aurelius assess your day'),
                         new Paragraph('DAY DREAMING TAKES AWAY FROM Your DREAMS'),
                         new Paragraph('MIT: START THE DAY WITH THE MOST IMPORTANT TASK '),
-                        new Paragraph('PAN ON SUNDAYS')
+                        new Paragraph('PLAN ON SUNDAYS')
                     ],
                       borders: {
                         top: { style: BorderStyle.NONE },
@@ -293,6 +293,25 @@ import {
                     })
                 ]
             }),
+            new TableRow({
+                children: [
+                    new TableCell({
+                        columnSpan: 2,
+                        children: [
+                          new Paragraph('PRIORITIES(must complete no matter what):'),
+                          new Paragraph('TPlan day ahead, plan every night, review and execute in the morning'),
+                          new Paragraph('Minimize distractions, tv/phone/social media, after work only'),
+                          new Paragraph('Review Goals every week, record all new ones to clear mind'),
+                      ],
+                        borders: {
+                          top: { style: BorderStyle.NONE },
+                          bottom: { style: BorderStyle.NONE },
+                          left: { style: BorderStyle.NONE },
+                          right: { style: BorderStyle.NONE }
+                          }
+                      })
+                  ]
+              }),
             new TableRow({
                 children: [
                     new TableCell({
@@ -510,6 +529,314 @@ import {
                             new Paragraph('8')
                         ]
                         })
+                  ]
+              })
+    ]
+  });
+}
+
+public peopleToContactTable (): Table {
+    return new Table({
+      width: {
+          size: 100,
+          type: WidthType.PERCENTAGE
+      },
+      borders: {
+        top: {
+          color: '#000000',
+          space: 1,
+          style: BorderStyle.NONE,
+          size: 0
+        },
+        bottom: {
+            color: 'auto',
+            space: 1,
+            style: BorderStyle.NONE,
+            size: 0
+        },
+        left: {
+          color: 'auto',
+          space: 1,
+          style: BorderStyle.NONE,
+          size: 0
+        },
+        right: {
+        color: 'auto',
+        space: 1,
+        style: BorderStyle.NONE,
+        size: 0
+        }
+      },
+      rows: [new TableRow({
+        children: [
+            new TableCell({
+                children: [
+                    new Paragraph({
+                        heading: HeadingLevel.HEADING_2,
+                        alignment: AlignmentType.CENTER,
+                        children: [
+                            new TextRun({
+                                text: 'PEOPLE TO CONTACT THIS WEEK',
+                                bold: true,
+                              color: '000000'
+                            })
+                        ]
+                    })
+              ],
+                borders: {
+                  top: { style: BorderStyle.NONE },
+                  bottom: { style: BorderStyle.NONE },
+                  left: { style: BorderStyle.NONE },
+                  right: { style: BorderStyle.NONE }
+                  }
+              }),
+              new TableCell({
+                children: [
+                    new Paragraph({
+                        heading: HeadingLevel.HEADING_2,
+                        alignment: AlignmentType.CENTER,
+                        children: [
+                            new TextRun({
+                                text: 'PEOPLE I AM WAITING ON',
+                                bold: true,
+                              color: '000000'
+                            })
+                        ]
+                    })
+              ],
+                borders: {
+                  top: { style: BorderStyle.NONE },
+                  bottom: { style: BorderStyle.NONE },
+                  left: { style: BorderStyle.NONE },
+                  right: { style: BorderStyle.NONE }
+                  }
+              })
+          ]
+      })
+]
+});
+}
+
+public createEissenhowerMatrix (): Table {
+    return new Table({
+      width: {
+          size: 100,
+          type: WidthType.PERCENTAGE
+      },
+      borders: {
+        top: {
+          color: '#000000',
+          space: 1,
+          style: BorderStyle.THICK,
+          size: 12
+        },
+        bottom: {
+            color: 'auto',
+            space: 1,
+            style: BorderStyle.THICK,
+            size: 12
+        },
+        left: {
+          color: 'auto',
+          space: 1,
+          style: BorderStyle.THICK,
+          size: 12
+        },
+        right: {
+        color: 'auto',
+        space: 1,
+        style: BorderStyle.THICK,
+        size: 12
+        }
+      },
+       rows: [
+          new TableRow({
+              children: [
+                  new TableCell({
+                      children: [
+                        new Paragraph({
+                            text: 'URGENT AND IMPORTANT:',
+                            spacing: {
+                                before: 0,
+                                after: 1800
+                            }
+                        })
+                    ]
+                    }),
+                    new TableCell({
+                        children: [
+                            new Paragraph({
+                                text: 'URGENT NOT IMPORTANT:',
+                                spacing: {
+                                    before: 0,
+                                    after: 1800
+                                }
+                            })
+                        ]
+                    })
+                ]
+            }),
+            new TableRow({
+                children: [
+                    new TableCell({
+                        children: [
+                          new Paragraph({
+                              text: 'NOT URGENT AND IMPORTANT:',
+                              spacing: {
+                                  before: 0,
+                                  after: 1800
+                              }
+                          })
+                      ]
+                      }),
+                      new TableCell({
+                          children: [
+                              new Paragraph({
+                                  text: 'NOT URGENT NOT IMPORTANT:',
+                                  spacing: {
+                                      before: 0,
+                                      after: 1800
+                                  }
+                              })
+                          ]
+                      })
+                  ]
+              })
+    ]
+  });
+}
+
+public createDailyProgressReportTables (): Table {
+    return new Table({
+      width: {
+          size: 100,
+          type: WidthType.PERCENTAGE
+      },
+      borders: {
+        top: {
+          color: '#000000',
+          space: 1,
+          style: BorderStyle.THICK,
+          size: 12
+        },
+        bottom: {
+            color: 'auto',
+            space: 1,
+            style: BorderStyle.THICK,
+            size: 12
+        },
+        left: {
+          color: 'auto',
+          space: 1,
+          style: BorderStyle.THICK,
+          size: 12
+        },
+        right: {
+        color: 'auto',
+        space: 1,
+        style: BorderStyle.THICK,
+        size: 12
+        }
+      },
+       rows: [
+          new TableRow({
+              children: [
+                  new TableCell({
+                      children: [
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: 'MONDAY',
+                                    bold: true,
+                                    color: '000000'
+                                })
+                            ]
+                        }),
+                        new Paragraph(''),
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: 'WAKE:                              MIT:',
+                                    bold: true,
+                                    color: '000000'
+                                })
+                            ]
+                        }),
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: 'PHYSIO:',
+                                    bold: true,
+                                    color: '000000'
+                                })
+                            ]
+                        }),
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: 'WORK:',
+                                    bold: true,
+                                    color: '000000'
+                                })
+                            ]
+                        }),
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: 'EXERCISE:',
+                                    bold: true,
+                                    color: '000000'
+                                })
+                            ]
+                        }),
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: 'KG:',
+                                    bold: true,
+                                    color: '000000'
+                                })
+                            ]
+                        })
+                      ]
+                    }),
+                    new TableCell({
+                        children: [
+                            new Paragraph({
+                                text: 'URGENT NOT IMPORTANT:',
+                                spacing: {
+                                    before: 0,
+                                    after: 1800
+                                }
+                            })
+                        ]
+                    })
+                ]
+            }),
+            new TableRow({
+                children: [
+                    new TableCell({
+                        children: [
+                          new Paragraph({
+                              text: 'NOT URGENT AND IMPORTANT:',
+                              spacing: {
+                                  before: 0,
+                                  after: 1800
+                              }
+                          })
+                      ]
+                      }),
+                      new TableCell({
+                          children: [
+                              new Paragraph({
+                                  text: 'NOT URGENT NOT IMPORTANT:',
+                                  spacing: {
+                                      before: 0,
+                                      after: 1800
+                                  }
+                              })
+                          ]
+                      })
                   ]
               })
     ]

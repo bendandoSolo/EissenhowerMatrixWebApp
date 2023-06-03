@@ -26,7 +26,7 @@ module.exports = {
     indent: 'off',
     'no-tabs': 'off',
     'padded-blocks': 'off',
-    'comma-dangle': 'off',
+    "comma-dangle": ["error", "never"],
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     semi: 'off'
