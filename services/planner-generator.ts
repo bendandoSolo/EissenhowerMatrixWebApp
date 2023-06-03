@@ -70,7 +70,7 @@ import {
               this.createHeading(''),
               this.createEissenhowerMatrix(),
               this.createHeading(''),
-              this.createDailyProgressReportTables(),
+              this.createDailyProgressReportTables()
             ]
           }]
       });
@@ -301,7 +301,7 @@ import {
                           new Paragraph('PRIORITIES(must complete no matter what):'),
                           new Paragraph('TPlan day ahead, plan every night, review and execute in the morning'),
                           new Paragraph('Minimize distractions, tv/phone/social media, after work only'),
-                          new Paragraph('Review Goals every week, record all new ones to clear mind'),
+                          new Paragraph('Review Goals every week, record all new ones to clear mind')
                       ],
                         borders: {
                           top: { style: BorderStyle.NONE },
@@ -746,6 +746,19 @@ public createDailyProgressReportTables (): Table {
                         new Paragraph({
                             children: [
                                 new TextRun({
+                                    text: 'THINGS I NEED TO GET THIS WEEK',
+                                    bold: true,
+                                    color: '000000'
+                                })
+                            ]
+                        })
+                      ]
+                    }),
+                  new TableCell({
+                      children: [
+                        new Paragraph({
+                            children: [
+                                new TextRun({
                                     text: 'MONDAY',
                                     bold: true,
                                     color: '000000'
@@ -797,48 +810,1819 @@ public createDailyProgressReportTables (): Table {
                                     color: '000000'
                                 })
                             ]
+                        }),
+                        new Paragraph(''),
+                        new Table({
+                            rows: [
+                                new TableRow({
+                                    children: [
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        })
+                                    ]
+                                }),
+                                new TableRow({
+                                    children: [
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        })
+                                    ]
+                                }),
+                                new TableRow({
+                                    children: [
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        })
+                                    ]
+                                }),
+                                new TableRow({
+                                    children: [
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        })
+                                    ]
+                                }),
+                                new TableRow({
+                                    children: [
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        })
+                                    ]
+                                }),
+                                new TableRow({
+                                    children: [
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        })
+                                    ]
+                                })
+                            ]
+                        }),
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: '[    /     ]',
+                                    bold: true,
+                                    color: '000000'
+                                })
+                            ]
                         })
                       ]
-                    }),
-                    new TableCell({
-                        children: [
-                            new Paragraph({
-                                text: 'URGENT NOT IMPORTANT:',
-                                spacing: {
-                                    before: 0,
-                                    after: 1800
-                                }
-                            })
-                        ]
                     })
                 ]
             }),
-            new TableRow({
-                children: [
-                    new TableCell({
-                        children: [
-                          new Paragraph({
-                              text: 'NOT URGENT AND IMPORTANT:',
-                              spacing: {
-                                  before: 0,
-                                  after: 1800
-                              }
-                          })
+          new TableRow({
+              children: [
+                  new TableCell({
+                      children: [
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: 'TUESDAY',
+                                    bold: true,
+                                    color: '000000'
+                                })
+                            ]
+                        }),
+                        new Paragraph(''),
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: 'WAKE:                              MIT:',
+                                    bold: true,
+                                    color: '000000'
+                                })
+                            ]
+                        }),
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: 'PHYSIO:',
+                                    bold: true,
+                                    color: '000000'
+                                })
+                            ]
+                        }),
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: 'WORK:',
+                                    bold: true,
+                                    color: '000000'
+                                })
+                            ]
+                        }),
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: 'EXERCISE:',
+                                    bold: true,
+                                    color: '000000'
+                                })
+                            ]
+                        }),
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: 'KG:',
+                                    bold: true,
+                                    color: '000000'
+                                })
+                            ]
+                        }),
+                        new Paragraph(''),
+                        new Table({
+                            rows: [
+                                new TableRow({
+                                    children: [
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        })
+                                    ]
+                                }),
+                                new TableRow({
+                                    children: [
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        })
+                                    ]
+                                }),
+                                new TableRow({
+                                    children: [
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        })
+                                    ]
+                                }),
+                                new TableRow({
+                                    children: [
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        })
+                                    ]
+                                }),
+                                new TableRow({
+                                    children: [
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        })
+                                    ]
+                                }),
+                                new TableRow({
+                                    children: [
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        })
+                                    ]
+                                })
+                            ]
+                        }),
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: '[    /     ]',
+                                    bold: true,
+                                    color: '000000'
+                                })
+                            ]
+                        })
                       ]
-                      }),
-                      new TableCell({
-                          children: [
-                              new Paragraph({
-                                  text: 'NOT URGENT NOT IMPORTANT:',
-                                  spacing: {
-                                      before: 0,
-                                      after: 1800
-                                  }
-                              })
-                          ]
-                      })
-                  ]
-              })
+                    }),
+                  new TableCell({
+                      children: [
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: 'WEDNESDAY',
+                                    bold: true,
+                                    color: '000000'
+                                })
+                            ]
+                        }),
+                        new Paragraph(''),
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: 'WAKE:                              MIT:',
+                                    bold: true,
+                                    color: '000000'
+                                })
+                            ]
+                        }),
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: 'PHYSIO:',
+                                    bold: true,
+                                    color: '000000'
+                                })
+                            ]
+                        }),
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: 'WORK:',
+                                    bold: true,
+                                    color: '000000'
+                                })
+                            ]
+                        }),
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: 'EXERCISE:',
+                                    bold: true,
+                                    color: '000000'
+                                })
+                            ]
+                        }),
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: 'KG:',
+                                    bold: true,
+                                    color: '000000'
+                                })
+                            ]
+                        }),
+                        new Paragraph(''),
+                        new Table({
+                            rows: [
+                                new TableRow({
+                                    children: [
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        })
+                                    ]
+                                }),
+                                new TableRow({
+                                    children: [
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        })
+                                    ]
+                                }),
+                                new TableRow({
+                                    children: [
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        })
+                                    ]
+                                }),
+                                new TableRow({
+                                    children: [
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        })
+                                    ]
+                                }),
+                                new TableRow({
+                                    children: [
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        })
+                                    ]
+                                }),
+                                new TableRow({
+                                    children: [
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        })
+                                    ]
+                                })
+                            ]
+                        }),
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: '[    /     ]',
+                                    bold: true,
+                                    color: '000000'
+                                })
+                            ]
+                        })
+                      ]
+                    })
+                ]
+            }),
+          new TableRow({
+              children: [
+                  new TableCell({
+                      children: [
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: 'THURSDAY',
+                                    bold: true,
+                                    color: '000000'
+                                })
+                            ]
+                        }),
+                        new Paragraph(''),
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: 'WAKE:                              MIT:',
+                                    bold: true,
+                                    color: '000000'
+                                })
+                            ]
+                        }),
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: 'PHYSIO:',
+                                    bold: true,
+                                    color: '000000'
+                                })
+                            ]
+                        }),
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: 'WORK:',
+                                    bold: true,
+                                    color: '000000'
+                                })
+                            ]
+                        }),
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: 'EXERCISE:',
+                                    bold: true,
+                                    color: '000000'
+                                })
+                            ]
+                        }),
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: 'KG:',
+                                    bold: true,
+                                    color: '000000'
+                                })
+                            ]
+                        }),
+                        new Paragraph(''),
+                        new Table({
+                            rows: [
+                                new TableRow({
+                                    children: [
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        })
+                                    ]
+                                }),
+                                new TableRow({
+                                    children: [
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        })
+                                    ]
+                                }),
+                                new TableRow({
+                                    children: [
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        })
+                                    ]
+                                }),
+                                new TableRow({
+                                    children: [
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        })
+                                    ]
+                                }),
+                                new TableRow({
+                                    children: [
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        })
+                                    ]
+                                }),
+                                new TableRow({
+                                    children: [
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        })
+                                    ]
+                                })
+                            ]
+                        }),
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: '[    /     ]',
+                                    bold: true,
+                                    color: '000000'
+                                })
+                            ]
+                        })
+                      ]
+                    }),
+                  new TableCell({
+                      children: [
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: 'FRIDAY',
+                                    bold: true,
+                                    color: '000000'
+                                })
+                            ]
+                        }),
+                        new Paragraph(''),
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: 'WAKE:                              MIT:',
+                                    bold: true,
+                                    color: '000000'
+                                })
+                            ]
+                        }),
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: 'PHYSIO:',
+                                    bold: true,
+                                    color: '000000'
+                                })
+                            ]
+                        }),
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: 'WORK:',
+                                    bold: true,
+                                    color: '000000'
+                                })
+                            ]
+                        }),
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: 'EXERCISE:',
+                                    bold: true,
+                                    color: '000000'
+                                })
+                            ]
+                        }),
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: 'KG:',
+                                    bold: true,
+                                    color: '000000'
+                                })
+                            ]
+                        }),
+                        new Paragraph(''),
+                        new Table({
+                            rows: [
+                                new TableRow({
+                                    children: [
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        })
+                                    ]
+                                }),
+                                new TableRow({
+                                    children: [
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        })
+                                    ]
+                                }),
+                                new TableRow({
+                                    children: [
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        })
+                                    ]
+                                }),
+                                new TableRow({
+                                    children: [
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        })
+                                    ]
+                                }),
+                                new TableRow({
+                                    children: [
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        })
+                                    ]
+                                }),
+                                new TableRow({
+                                    children: [
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        })
+                                    ]
+                                })
+                            ]
+                        }),
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: '[    /     ]',
+                                    bold: true,
+                                    color: '000000'
+                                })
+                            ]
+                        })
+                      ]
+                    })
+                ]
+            }),
+          new TableRow({
+              children: [
+                  new TableCell({
+                      children: [
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: 'SATURDAY',
+                                    bold: true,
+                                    color: '000000'
+                                })
+                            ]
+                        }),
+                        new Paragraph(''),
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: 'WAKE:                              MIT:',
+                                    bold: true,
+                                    color: '000000'
+                                })
+                            ]
+                        }),
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: 'PHYSIO:',
+                                    bold: true,
+                                    color: '000000'
+                                })
+                            ]
+                        }),
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: 'WORK:',
+                                    bold: true,
+                                    color: '000000'
+                                })
+                            ]
+                        }),
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: 'EXERCISE:',
+                                    bold: true,
+                                    color: '000000'
+                                })
+                            ]
+                        }),
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: 'KG:',
+                                    bold: true,
+                                    color: '000000'
+                                })
+                            ]
+                        }),
+                        new Paragraph(''),
+                        new Table({
+                            rows: [
+                                new TableRow({
+                                    children: [
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        })
+                                    ]
+                                }),
+                                new TableRow({
+                                    children: [
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        })
+                                    ]
+                                }),
+                                new TableRow({
+                                    children: [
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        })
+                                    ]
+                                }),
+                                new TableRow({
+                                    children: [
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        })
+                                    ]
+                                }),
+                                new TableRow({
+                                    children: [
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        })
+                                    ]
+                                }),
+                                new TableRow({
+                                    children: [
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        })
+                                    ]
+                                })
+                            ]
+                        }),
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: '[    /     ]',
+                                    bold: true,
+                                    color: '000000'
+                                })
+                            ]
+                        })
+                      ]
+                    }),
+                  new TableCell({
+                      children: [
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: 'SUNDAY',
+                                    bold: true,
+                                    color: '000000'
+                                })
+                            ]
+                        }),
+                        new Paragraph(''),
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: 'WAKE:                              MIT:',
+                                    bold: true,
+                                    color: '000000'
+                                })
+                            ]
+                        }),
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: 'PHYSIO:',
+                                    bold: true,
+                                    color: '000000'
+                                })
+                            ]
+                        }),
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: 'WORK:',
+                                    bold: true,
+                                    color: '000000'
+                                })
+                            ]
+                        }),
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: 'EXERCISE:',
+                                    bold: true,
+                                    color: '000000'
+                                })
+                            ]
+                        }),
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: 'KG:',
+                                    bold: true,
+                                    color: '000000'
+                                })
+                            ]
+                        }),
+                        new Paragraph(''),
+                        new Table({
+                            rows: [
+                                new TableRow({
+                                    children: [
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        })
+                                    ]
+                                }),
+                                new TableRow({
+                                    children: [
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        })
+                                    ]
+                                }),
+                                new TableRow({
+                                    children: [
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        })
+                                    ]
+                                }),
+                                new TableRow({
+                                    children: [
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        })
+                                    ]
+                                }),
+                                new TableRow({
+                                    children: [
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        })
+                                    ]
+                                }),
+                                new TableRow({
+                                    children: [
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        }),
+                                        new TableCell({
+                                            width: {
+                                                size: 200,
+                                                type: WidthType.DXA
+                                            },
+                                            children: [new Paragraph(' ')]
+                                        })
+                                    ]
+                                })
+                            ]
+                        }),
+                        new Paragraph({
+                            children: [
+                                new TextRun({
+                                    text: '[    /     ]',
+                                    bold: true,
+                                    color: '000000'
+                                })
+                            ]
+                        })
+                      ]
+                    })
+                ]
+            }),
     ]
   });
 }
