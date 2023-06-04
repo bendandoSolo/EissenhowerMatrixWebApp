@@ -18,9 +18,12 @@ import {
     WidthType
   } from 'docx';
 
+  import TodoType from '../types/Todo';
+
   export class DocumentCreator {
     // tslint:disable-next-line: typedef
-    public create (): Document {
+    public create (eissenhowerValues: TodoType[]): Document {
+
       const document = new Document({
         styles: {
         },
@@ -38,6 +41,7 @@ import {
             },
             children: [
               this.CreateDateOfNextWeek(),
+              this.ShowEissenhowerValues(eissenhowerValues),
               this.createHeading(''),
               new Paragraph({
                 heading: HeadingLevel.HEADING_2,
@@ -68,7 +72,7 @@ import {
               this.createHeading(''),
               this.createHeading(''),
               this.createHeading(''),
-              this.createEissenhowerMatrix(),
+              this.createEissenhowerMatrix(eissenhowerValues),
               this.createHeading(''),
               this.createDailyProgressReportTables()
             ]
@@ -189,10 +193,17 @@ import {
   //     });
   //   }
 
+   public ShowEissenhowerValues (values: object[]): Paragraph {
+    const text = JSON.stringify(values);
+    console.log(values);
+    return new Paragraph({
+       text
+    });
+   }
+
     public CreateDateOfNextWeek (): Paragraph {
         return new Paragraph(this.GetDateOfNextWeek());
     }
-
 
     public GetDateOfNextWeek (): string {
         const todaysDay = dayjs(); // Monday is day 1 but here week starts from Sunday i.e. 0, so 7 means next Monday.
@@ -634,7 +645,100 @@ public peopleToContactTable (): Table {
 });
 }
 
-public createEissenhowerMatrix (): Table {
+public createEissenhowerSectionContent (names: string[], text: string): Paragraph[] | Paragraph {
+    if (names.length === 0) {
+          return new Paragraph({
+            children: [
+                new TextRun({
+                    text,
+                    bold: true,
+                    color: '000000'
+                })
+            ],
+            spacing: {
+                before: 0,
+                after: 1800
+            }
+        })
+    // eslint-disable-next-line no-empty
+    } else {
+    }
+    return new Paragraph('test Message');
+}
+
+// here we have reached limitations and want to move to a new library react print to pdf
+public createEissenhowerMatrix (eissenhowerValues: TodoType[]): Table {
+
+    // const hasPriority = (todo: TodoType): boolean => todo.priority !== 0;
+    const UrgentAndImportantTaskNames = eissenhowerValues.filter((item) => item.priority === 1).map(item => item.name);
+    alert(UrgentAndImportantTaskNames);
+    const urgentNotImportant = eissenhowerValues.filter((item) => item.priority === 2).map(item => item.name);
+    const noturgentAndImportant = eissenhowerValues.filter((item) => item.priority === 3).map(item => item.name);
+    const noturgentNotImportant = eissenhowerValues.filter((item) => item.priority === 4).map(item => item.name);
+
+    const urgentAndImportantTableContent = this.createEissenhowerSectionContent(UrgentAndImportantTaskNames, 'URGENT AND IMPORTANT:');
+
+    const paragraphsArray = [
+        new Paragraph('Paragraph 1'),
+        // new Paragraph('Paragraph 2'),
+        // new Paragraph('Paragraph 3')
+    ];
+
+    const innerTable = new Table({
+            borders: {
+              top: {
+                color: '#000000',
+                space: 1,
+                style: BorderStyle.NONE,
+                size: 0
+              },
+              bottom: {
+                  color: 'auto',
+                  space: 1,
+                  style: BorderStyle.NONE,
+                  size: 0
+              },
+              left: {
+                color: 'auto',
+                space: 1,
+                style: BorderStyle.NONE,
+                size: 0
+              },
+              right: {
+              color: 'auto',
+              space: 1,
+              style: BorderStyle.NONE,
+              size: 0
+              }
+            },
+        rows: [
+            new TableRow({
+                children: [
+                    new TableCell({
+                        children: [new Paragraph('Inner Cell 1')],
+                        borders: {
+                            top: { style: BorderStyle.NONE },
+                            bottom: { style: BorderStyle.NONE },
+                            left: { style: BorderStyle.NONE },
+                            right: { style: BorderStyle.NONE }
+                        }
+                    }
+                    ),
+                    new TableCell({
+                        children: [new Paragraph('Inner Cell 2')],
+                        borders: {
+                            top: { style: BorderStyle.NONE },
+                            bottom: { style: BorderStyle.NONE },
+                            left: { style: BorderStyle.NONE },
+                            right: { style: BorderStyle.NONE }
+                        }
+                    })
+                ]
+            })
+               // Add more TableRow objects for more rows in your inner table
+        ]
+    });
+
     return new Table({
       width: {
           size: 100,
@@ -671,13 +775,15 @@ public createEissenhowerMatrix (): Table {
               children: [
                   new TableCell({
                       children: [
-                        new Paragraph({
-                            text: 'URGENT AND IMPORTANT:',
-                            spacing: {
-                                before: 0,
-                                after: 1800
-                            }
-                        })
+                        innerTable
+                        // new Paragraph({
+                        //     text: 'URGENT AND IMPORTANT:',
+                        //     spacing: {
+                        //         before: 0,
+                        //         after: 1800
+                        //     }
+                        // }),
+                        // new Paragraph(urgentAndImportant.join('\n'))
                     ]
                     }),
                     new TableCell({
@@ -688,7 +794,8 @@ public createEissenhowerMatrix (): Table {
                                     before: 0,
                                     after: 1800
                                 }
-                            })
+                            }),
+                            new Paragraph(urgentNotImportant.join('\n'))
                         ]
                     })
                 ]
@@ -703,7 +810,8 @@ public createEissenhowerMatrix (): Table {
                                   before: 0,
                                   after: 1800
                               }
-                          })
+                            }),
+                            new Paragraph(noturgentAndImportant.join('\n'))
                       ]
                       }),
                       new TableCell({
@@ -714,7 +822,8 @@ public createEissenhowerMatrix (): Table {
                                       before: 0,
                                       after: 1800
                                   }
-                              })
+                              }),
+                              new Paragraph(noturgentNotImportant.join('\n'))
                           ]
                       })
                   ]

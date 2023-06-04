@@ -4,11 +4,19 @@
 import { Packer } from 'docx';
 import { saveAs } from 'file-saver';
 
-// import { experiences, education, skills, achievements } from '../../services/cv-data';
-// import { DocumentCreator } from '../../services/cv-generator';
 import { DocumentCreator } from '../../services/planner-generator';
+import useTodos from '../../hooks/useTodos';
+import TodoType from '../../types/Todo';
 
 const MyDocument = (): JSX.Element => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const { status, data, error, isFetching } = useTodos();
+
+  const hasPriority = (todo: TodoType): boolean => todo.priority !== 0;
+
+  // eslint-disable-next-line no-extra-boolean-cast
+  const PrioritizedData	= data == null ? ' ' : data.filter(hasPriority);
+
   function generate (): void {
         const documentCreator = new DocumentCreator();
         // const doc = documentCreator.create([
@@ -18,7 +26,7 @@ const MyDocument = (): JSX.Element => {
         //   achievements
         // ]);
 
-        const doc = documentCreator.create();
+        const doc = documentCreator.create(PrioritizedData);
 
         void Packer.toBlob(doc).then(blob => {
           console.log(blob);
@@ -29,11 +37,21 @@ const MyDocument = (): JSX.Element => {
 
     return (
         <>
-        <h2>This is my basic document</h2>
+        <h2>Print Weekly Planning Document</h2>
         <div>
         <p>
-          Start editing to see some magic happen :)
-          <button onClick={generate}>Generate CV with docx!</button>
+			<button onClick={generate}>Generate CV with docx!</button>
+			{status === 'loading'
+				? (
+					'Loading...'
+				)
+				: status === 'error'
+					? (
+						<span>Error: {error.message}</span>
+					)
+					: (
+						<p>{ JSON.stringify(PrioritizedData) }</p>
+					)}
         </p>
       </div>
         </>
