@@ -1,3 +1,5 @@
+import dayjs from 'dayjs';
+
 import {
     AlignmentType,
     BorderStyle,
@@ -15,9 +17,6 @@ import {
     UnderlineType,
     WidthType
   } from 'docx';
-  // const PHONE_NUMBER = '07534563401';
-  // const PROFILE_URL = 'https://www.linkedin.com/in/dolan1';
-  // const EMAIL = 'docx@docx.com';
 
   export class DocumentCreator {
     // tslint:disable-next-line: typedef
@@ -30,14 +29,16 @@ import {
             properties: {
                 page: {
                     margin: {
-                        top: 1000,
-                        right: 1000,
+                        top: 500,
+                        right: 500,
                         bottom: 1000,
-                        left: 1000
+                        left: 500
                     }
                 }
             },
             children: [
+              this.CreateDateOfNextWeek(),
+              this.createHeading(''),
               new Paragraph({
                 heading: HeadingLevel.HEADING_2,
                 alignment: AlignmentType.CENTER,
@@ -61,7 +62,6 @@ import {
               this.createHeading('PROJECTS AND NEXT STEPS'),
               this.createHeading(''),
               this.createProjectsTable(),
-              this.createHeading(''),
               this.createHeading(''),
               this.peopleToContactTable(),
               this.createHeading(''),
@@ -188,6 +188,23 @@ import {
   //       ]
   //     });
   //   }
+
+    public CreateDateOfNextWeek (): Paragraph {
+        return new Paragraph(this.GetDateOfNextWeek());
+    }
+
+
+    public GetDateOfNextWeek (): string {
+        const todaysDay = dayjs(); // Monday is day 1 but here week starts from Sunday i.e. 0, so 7 means next Monday.
+        let nextMonday = todaysDay;
+        if (todaysDay.day() !== 1) { // if today is not Monday
+            if (todaysDay.day() === 0)
+                 nextMonday = todaysDay.add(1, 'day');
+            else
+                nextMonday = todaysDay.add(7 - todaysDay.day() + 1, 'day');
+        }
+        return nextMonday.format('DD/MM/YY') + ' - ' + nextMonday.add(6, 'day').format('DD/MM/YY');
+    }
 
     public createHeading (text: string): Paragraph {
       return new Paragraph({
