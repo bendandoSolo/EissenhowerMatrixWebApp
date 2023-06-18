@@ -1,16 +1,15 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import axios from 'axios';
 
-export default function useCreateTodo() {
+export default function useCreateTodo (): any {
 	const queryClient = useQueryClient();
 
 	return useMutation(async newTodo => {
-		let response = await axios.post(
+		const response = await axios.post(
 			'https://localhost:7108/todoitems',
 			newTodo
 		);
-		queryClient.invalidateQueries(['todos'], )
+		await queryClient.invalidateQueries(['todos'])
 		return response;
-	 })
+	})
  }
-

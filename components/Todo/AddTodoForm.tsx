@@ -11,7 +11,7 @@ interface IFormInput {
   description: string
 }
 
-const AddTodoForm = (): JSX.Element => {
+const AddTodoForm = ({ priority }: { priority: number | null }): JSX.Element => {
 	const {
 		register,
 		handleSubmit,
@@ -23,8 +23,9 @@ const AddTodoForm = (): JSX.Element => {
 	const { isLoading, isError, isSuccess, mutate } = useCreateTodo()
 
 	const onSubmit = async (data: any): Promise<any> => {
-		mutate(data)
-		reset()
+		data.priority = priority ?? 0;
+		mutate(data);
+		reset();
 	}
 
 	return (

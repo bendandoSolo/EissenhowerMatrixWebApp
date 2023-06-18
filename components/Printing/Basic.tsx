@@ -39,7 +39,6 @@ const MyDocument = (): JSX.Element => {
         <>
         <h2>Print Weekly Planning Document</h2>
         <div>
-        <p>
 			<button onClick={generate}>Generate CV with docx!</button>
 			{status === 'loading'
 				? (
@@ -52,7 +51,6 @@ const MyDocument = (): JSX.Element => {
 					: (
 						<p>{ JSON.stringify(PrioritizedData) }</p>
 					)}
-        </p>
       </div>
         </>
     );

@@ -31,8 +31,8 @@ const PrioritizedTodoList = ({ priority }: { priority: number }): JSX.Element =>
 	return (
 		<div className='p-24'>
 			<div className='mb24'><h2 >{priorityEnum[priority]}</h2></div>
-			{open && <AddTodoForm/>}
-			< Button className="d-block" color="primary" variant="contained" onClick={openCreateTodo}><AddBoxIcon/></Button>
+			{open && <AddTodoForm priority={priority}/>}
+			<AddBoxIcon className="d-block" color='primary' fontSize='large' onClick={openCreateTodo} />
 			{status === 'loading'
 				? ('Loading...')
 				: status === 'error'

@@ -31,7 +31,7 @@ const TodoList = (): JSX.Element => {
 		<div className='p-24'>
 			<div className='mb24'><h2 >Todo List</h2></div>
 			{open && <AddTodoForm/>}
-			<Button className="d-block" color="primary" variant="contained" onClick={openCreateTodo}><AddBoxIcon/></Button>
+			<AddBoxIcon className="d-block" color='primary' fontSize='large' onClick={openCreateTodo} />
 			{status === 'loading'
 				? ('Loading...')
 				: status === 'error'
