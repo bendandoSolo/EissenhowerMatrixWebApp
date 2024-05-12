@@ -27,6 +27,14 @@ const doc = new Document({
 });
 
 // Used to export the file into a .docx file
-Packer.toBuffer(doc).then((buffer) => {
-    fs.writeFileSync('My Document.docx', buffer);
-});
+async function createWordDocument (): Promise<void> {
+    try {
+        const buffer = await Packer.toBuffer(doc); // Await the promise to resolve
+        fs.writeFileSync('My Document.docx', buffer); // Write the buffer to a .docx file
+        console.log('Document created successfully.');
+    } catch (error) {
+        console.error('Failed to create document:', error);
+    }
+}
+
+void createWordDocument();

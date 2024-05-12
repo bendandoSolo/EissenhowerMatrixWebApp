@@ -1,13 +1,13 @@
 import React from 'react';
 
-const useToggle = () => {
+const useToggle = (): any => {
 	const [open, setOpen] = React.useState(false);
 
-	const toggle = () => {
+	const toggle = (): any => {
 		setOpen(!open);
 	};
 
-	const close = () => {
+	const close = (): any => {
 		setOpen(false);
 	};
 

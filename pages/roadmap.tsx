@@ -5,11 +5,18 @@ const RoadMap = (): JSX.Element => (
 	<>
 		<div className='text-center p-40'>
 			<h1>Road of Project Initially for Quick Developer Reference</h1>
+
+			<h2>Bugs</h2>
+			<ol>
+				<li>App Crashes when clicking on edit sometimes, actually closes window somehow edit tennis serve to recreate?</li>
+                <li>Check deleted items don&apos;t appear on lists</li>
+				<li>Check performance issues?</li>
+			</ol>
+
 			<ul>
 				<li><h2>Get the app useful for me ASAP</h2></li>
-
-				<li>***Get toBuyOrGet working, ensure they are not displayed in Todo's, add toggle to display them in matrix****</li>
-				<li>BUG: Completed todo's being drawn in word doc</li>
+				<li>***Get toBuyOrGet working, ensure they are not displayed in Todo&apos;s, add toggle to display them in matrix****</li>
+				<li>BUG: Completed todo&apos;s being drawn in word doc</li>
 				<li>Get this being able to set goals, habit changes that need 5 or 10 weeks in a row, top projects and priorities for those, then basics for me done really!</li>
 				<li>Link to Calendar</li>
 				<li>Link to Jira / Devops?</li>

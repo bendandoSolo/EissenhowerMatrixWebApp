@@ -220,7 +220,7 @@ import {
       isCurrent: boolean
     ): string {
       const startDateText =
-        this.getMonthFromInt(startDate.month) + '. ' + startDate.year;
+      `${this.getMonthFromInt(startDate.month)}. ${startDate.year}`;
       const endDateText = isCurrent
         ? 'Present'
         : `${this.getMonthFromInt(endDate.month)}. ${endDate.year}`;

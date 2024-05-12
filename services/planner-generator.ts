@@ -353,11 +353,12 @@ import {
                       }),
                       new TableCell({
                         children: [
-                          new Paragraph('BONUS WEEKLY TASKS:'),
-                          new Paragraph('PRIMARY: KEEP JOB: 12+ POMODOROS'),
-                          new Paragraph('SECONDARY 1: Beat Jez @ Tennis, 1x Tennis/Week, 1x Cardio/Week'),
-                          new Paragraph('SECONDARY 2: No Smoking'),
-                          new Paragraph('SECONDARY 3: SOL, Counselling, Date/fortnight, Movie/week')
+                          new Paragraph('CURRENT GOALS AND HABITS:'),
+                          new Paragraph('BABY: SOL, Date her again!, heath, help cook and clean'),
+                          new Paragraph('IMPROVE PRODUCTIVITY - 1 game then read, bed@1m up@8'),
+                          new Paragraph('IMPROVE PRODUCTIVITY - 4 hrs a weekend, alernate tech spike/personal projects'),
+                          new Paragraph('SECONDARY 2: HEALTH / QUIT SMOKING - not first thing, record'),
+                          new Paragraph('SECONDARY 1: Beat Jez @ Tennis, 1x Tennis/Week, 1x Cardio/Week')
                       ],
                         borders: {
                           top: { style: BorderStyle.NONE },
@@ -2708,7 +2709,7 @@ public createDailyProgressReportTables (): Table {
                       ]
                     })
                 ]
-            }),
+            })
     ]
   });
 }
