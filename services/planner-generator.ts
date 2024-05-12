@@ -57,9 +57,6 @@ import {
                     })
                 ]
             }),
-              this.createHeading(''),
-              this.createHeading('Long Term Goals'),
-              this.createHeading(''),
               this.createGoalsTable(),
               this.createHeading(''),
               this.createHeading('PROJECTS AND NEXT STEPS'),
@@ -79,118 +76,6 @@ import {
       });
       return document;
     }
-
-  // export class DocumentCreator {
-  //   // tslint:disable-next-line: typedef
-  //   public create ([experiences, educations, skills, achivements]): Document {
-  //     const document = new Document({
-  //       sections: [
-  //         {
-  //           children: [
-  //             new Paragraph({
-  //               text: 'Dolan Miu',
-  //               heading: HeadingLevel.TITLE
-  //             }),
-  //             this.createContactInfo(PHONE_NUMBER, PROFILE_URL, EMAIL),
-  //             this.createHeading('Education'),
-  //             ...educations
-  //               .map(education => {
-  //                 const arr: Paragraph[] = [];
-  //                 arr.push(
-  //                   this.createInstitutionHeader(
-  //                     education.schoolName,
-  //                     `${education.startDate.year} - ${education.endDate.year}`
-  //                   )
-  //                 );
-  //                 arr.push(
-  //                   this.createRoleText(
-  //                     `${education.fieldOfStudy} - ${education.degree}`
-  //                   )
-  //                 );
-
-  //                 const bulletPoints = this.splitParagraphIntoBullets(
-  //                   education.notes
-  //                 );
-  //                 bulletPoints.forEach(bulletPoint => {
-  //                   arr.push(this.createBullet(bulletPoint));
-  //                 });
-
-  //                 return arr;
-  //               })
-  //               .reduce((prev, curr) => prev.concat(curr), []),
-  //             this.createHeading('Experience'),
-  //             ...experiences
-  //               .map(position => {
-  //                 const arr: Paragraph[] = [];
-
-  //                 arr.push(
-  //                   this.createInstitutionHeader(
-  //                     position.company.name,
-  //                     this.createPositionDateText(
-  //                       position.startDate,
-  //                       position.endDate,
-  //                       position.isCurrent
-  //                     )
-  //                   )
-  //                 );
-  //                 arr.push(this.createRoleText(position.title));
-
-  //                 const bulletPoints = this.splitParagraphIntoBullets(
-  //                   position.summary
-  //                 );
-
-  //                 bulletPoints.forEach(bulletPoint => {
-  //                   arr.push(this.createBullet(bulletPoint));
-  //                 });
-
-  //                 return arr;
-  //               })
-  //               .reduce((prev, curr) => prev.concat(curr), []),
-  //             this.createHeading('Skills, Achievements and Interests'),
-  //             this.createSubHeading('Skills'),
-  //             this.createSkillList(skills),
-  //             this.createSubHeading('Achievements'),
-  //             ...this.createAchivementsList(achivements),
-  //             this.createSubHeading('Interests'),
-  //             this.createInterests(
-  //               'Programming, Technology, Music Production, Web Design, 3D Modelling, Dancing.'
-  //             ),
-  //             this.createHeading('References'),
-  //             new Paragraph(
-  //               'Dr. Dean Mohamedally Director of Postgraduate Studies Department of Computer Science, University College London Malet Place, Bloomsbury, London WC1E d.mohamedally@ucl.ac.uk'
-  //             ),
-  //             new Paragraph('More references upon request'),
-  //             new Paragraph({
-  //               text:
-  //                 'This CV was generated in real-time based on my Linked-In profile from my personal website www.dolan.bio.',
-  //               alignment: AlignmentType.CENTER
-  //             })
-  //           ]
-  //         }
-  //       ]
-  //     });
-
-  //     return document;
-  //   }
-
-  //   public createContactInfo (
-  //     phoneNumber: string,
-  //     profileUrl: string,
-  //     email: string
-  //   ): Paragraph {
-  //     return new Paragraph({
-  //       alignment: AlignmentType.CENTER,
-  //       children: [
-  //         new TextRun(
-  //           `Mobile: ${phoneNumber} | LinkedIn: ${profileUrl} | Email: ${email}`
-  //         ),
-  //         new TextRun({
-  //           text: 'Address: 58 Elm Avenue, Kent ME4 6ER, UK',
-  //           break: 1
-  //         })
-  //       ]
-  //     });
-  //   }
 
     public CreateDateOfNextWeek (): Paragraph {
         return new Paragraph(this.GetDateOfNextWeek());
@@ -293,7 +178,7 @@ import {
             new TableRow({
               children: [
                   new TableCell({
-                      columnSpan: 2,
+                      columnSpan: 3,
                       children: [
                         new Paragraph('“You have no idea how efficient, efficient people get, it’s completely off the chart” – JB Peterson'),
                         new Paragraph('The Average Worker spends 2.1 hours distracted, it takes 21 minutes to get back to work – USE DISTRACTION APP'),
@@ -320,7 +205,8 @@ import {
                           new Paragraph('PRIORITIES(must complete no matter what):'),
                           new Paragraph('TPlan day ahead, plan every night, review and execute in the morning'),
                           new Paragraph('Minimize distractions, tv/phone/social media, after work only'),
-                          new Paragraph('Review Goals every week, record all new ones to clear mind')
+                          new Paragraph('Review Goals every week, record all new ones to clear mind'),
+                          new Paragraph('BLOCK TIME: WAKE @ 7, WORK 8-7')
                       ],
                         borders: {
                           top: { style: BorderStyle.NONE },
@@ -328,14 +214,9 @@ import {
                           left: { style: BorderStyle.NONE },
                           right: { style: BorderStyle.NONE }
                           }
-                      })
-                  ]
-              }),
-            new TableRow({
-                children: [
-                    new TableCell({
+                      }),
+                      new TableCell({
                         children: [
-                          new Paragraph('BLOCK TIME: WAKE @ 7, WORK 8-7'),
                           new Paragraph('8-9.30 : [3]'),
                           new Paragraph('9.45 - 11.15 : [3]'),
                           new Paragraph('11.30 - 1 : [3]'),
@@ -350,15 +231,75 @@ import {
                           left: { style: BorderStyle.NONE },
                           right: { style: BorderStyle.NONE }
                           }
+                      })
+                  ]
+              }),
+              new TableRow({
+                children: [
+                    new TableCell({
+                        columnSpan: 3,
+                        children: [
+                          new Paragraph('GOALS -> HABITS -> TRACKING')
+                      ],
+                        borders: {
+                          top: { style: BorderStyle.NONE },
+                          bottom: { style: BorderStyle.NONE },
+                          left: { style: BorderStyle.NONE },
+                          right: { style: BorderStyle.NONE }
+                          }
+                      })
+                  ]
+              }),
+            new TableRow({
+                children: [
+                      new TableCell({
+                        columnSpan: 1,
+                        children: [
+                          new Paragraph('BABY:'),
+                          new Paragraph('BABY:'),
+                          new Paragraph('HEALTH:'),
+                          new Paragraph('HEALTH:'),
+                          new Paragraph('DANIEL:'),
+                          new Paragraph('PRODUCTIVITY:'),
+                          new Paragraph('PRODUCTIVITY:'),
+                          new Paragraph('PRODUCTIVITY'),
+                      ],
+                        borders: {
+                          top: { style: BorderStyle.NONE },
+                          bottom: { style: BorderStyle.NONE },
+                          left: { style: BorderStyle.NONE },
+                          right: { style: BorderStyle.NONE }
+                          }
                       }),
                       new TableCell({
+                        columnSpan: 1,
                         children: [
-                          new Paragraph('CURRENT GOALS AND HABITS:'),
-                          new Paragraph('BABY: SOL, Date her again!, heath, help cook and clean'),
-                          new Paragraph('IMPROVE PRODUCTIVITY - 1 game then read, bed@1m up@8'),
-                          new Paragraph('IMPROVE PRODUCTIVITY - 4 hrs a weekend, alernate tech spike/personal projects'),
-                          new Paragraph('SECONDARY 2: HEALTH / QUIT SMOKING - not first thing, record'),
-                          new Paragraph('SECONDARY 1: Beat Jez @ Tennis, 1x Tennis/Week, 1x Cardio/Week')
+                          new Paragraph('Family time-weekend AM, 90 mins'),
+                          new Paragraph('Date Night - 1x a week'),
+                          new Paragraph('GYM 4 x a week'),
+                          new Paragraph('Smoke only / no weekend AM'),
+                          new Paragraph('30mins teaching - 1x a week'),
+                          new Paragraph('Bed @ 1am, up @ 8am'),
+                          new Paragraph('Read 26mins/night'),
+                          new Paragraph('Work 9AM')
+                      ],
+                        borders: {
+                          top: { style: BorderStyle.NONE },
+                          bottom: { style: BorderStyle.NONE },
+                          left: { style: BorderStyle.NONE },
+                          right: { style: BorderStyle.NONE }
+                          }
+                      }),
+                      new TableCell({
+                        columnSpan: 1,
+                        children: [
+                          new Paragraph('[     ] [     ]'),
+                          new Paragraph('[     ] '),
+                          new Paragraph('[ ] [ ] [ ] [ ]'),
+                          new Paragraph('[  ] [  ] [  ] [  ] [  ] [  ] [  ]'),
+                          new Paragraph('[     ] '),
+                          new Paragraph('[  ] [  ] [  ] [  ] [  ] [  ] [  ]'),
+                          new Paragraph('[  ] [  ] [  ] [  ] [  ] [  ] [  ]')
                       ],
                         borders: {
                           top: { style: BorderStyle.NONE },

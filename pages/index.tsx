@@ -22,10 +22,13 @@ const Home: NextPage = () => {
 				<div className='flex-center'>
 					<h1>The Eisenhower matrix</h1>
 				</div>
-				<p className='max'>Use our simple Eisenhower Matrix app to help you plan you projects and be more organized</p>
-				<h3>Get Started with our free Eisenhower Matrix App</h3>
+				{/* <p className='max'>Use our simple Eisenhower Matrix app to help you plan you projects and be more organized</p>
+				<h3>Get Started with our free Eisenhower Matrix App</h3> */}
 				<br></br>
-
+				<EissenhowerMatrix />
+				<hr/>
+				{/* <APITests /> */}
+				<MyDocument />
 				<Grid container spacing={2}>
 					<Grid item md={6}>
 						<TodoList />
@@ -34,10 +37,6 @@ const Home: NextPage = () => {
 						<DoneList/>
 					</Grid>
 				</Grid>
-				<EissenhowerMatrix />
-				<hr/>
-				<APITests />
-				<MyDocument />
 			</div>
 		</>
 	)
