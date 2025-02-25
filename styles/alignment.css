@@ -1,0 +1,53 @@
+.text-center {
+  text-align: center;
+}
+
+.d-block {
+  display: block;
+}
+
+.p-40 {
+  padding: 40px;
+}
+
+.p-24 {
+  padding: 24px;
+}
+
+.p-6 {
+  padding: 6px;
+}
+
+.m-6 {
+  margin: 6px;
+}
+
+.mb12 {
+  margin-bottom: 12px;
+}
+
+.mb24 {
+  margin-bottom: 24px;
+}
+
+.pb12 {
+  padding-bottom: 12px;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.max-width-250 {
+  max-width: 250px;
+}
+
+.max-width-300 {
+  max-width: 300px;
+}/*# sourceMappingURL=alignment.css.map */

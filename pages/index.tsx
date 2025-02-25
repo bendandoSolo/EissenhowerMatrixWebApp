@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
-import APITests from '../components/APITests';
+// import APITests from '../components/APITests';
 import TodoList from '../components/Lists/TodoList';
 import DoneList from '../components/Lists/DoneList';
 import { Grid } from '@mui/material'; // best to use css grid
@@ -19,23 +19,17 @@ const Home: NextPage = () => {
 					<link rel="icon" href="/favicon.ico" />
 				</Head>
 
-				<div className='flex-center'>
-					<h1>The Eisenhower matrix</h1>
-				</div>
-				{/* <p className='max'>Use our simple Eisenhower Matrix app to help you plan you projects and be more organized</p>
-				<h3>Get Started with our free Eisenhower Matrix App</h3> */}
-				<br></br>
 				<EissenhowerMatrix />
 				<hr/>
 				{/* <APITests /> */}
 				<MyDocument />
 				<Grid container spacing={2}>
-					<Grid item md={6}>
+					{/* <Grid item md={6}>
 						<TodoList />
 					</Grid>
 					<Grid item md={6}>
 						<DoneList/>
-					</Grid>
+					</Grid> */}
 				</Grid>
 			</div>
 		</>

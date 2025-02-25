@@ -14,7 +14,7 @@ import {
 
   export class DocumentCreator {
     // tslint:disable-next-line: typedef
-    public create ([experiences, educations, skills, achivements]): Document {
+    public create ([experiences, educations, skills, achivements]: [any[], any[], any[], any[]]): Document {
       const document = new Document({
         sections: [
           {

@@ -30,7 +30,7 @@ const TodoList = (): JSX.Element => {
 	return (
 		<div className='p-24'>
 			<div className='mb24'><h2 >Todo List</h2></div>
-			{open && <AddTodoForm/>}
+			{(Boolean(open)) && <AddTodoForm priority={null}/>}
 			<AddBoxIcon className="d-block" color='primary' fontSize='large' onClick={openCreateTodo} />
 			{status === 'loading'
 				? ('Loading...')
